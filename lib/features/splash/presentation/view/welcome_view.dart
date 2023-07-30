@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/features/splash/presentation/view/widgets/welcome_view_body.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -7,6 +8,8 @@ class WelcomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold(
+      body: WelcomeViewBody(),
+    );
   }
 }

@@ -1,6 +1,4 @@
-class Assets {
-  Assets._();
-  
+class AppIcons {
   /// Assets for iconsArrow
   /// assets/icons/arrow.svg
   static const String iconsArrow = "assets/icons/arrow.svg";
