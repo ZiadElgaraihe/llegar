@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 
 abstract class TextStyles {
@@ -48,5 +49,11 @@ abstract class TextStyles {
   static TextStyle textStyle40 = TextStyle(
     fontSize: 40.sp,
     fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle textStyle48 = TextStyle(
+    fontSize: 48.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.kSecondaryColor,
   );
 }

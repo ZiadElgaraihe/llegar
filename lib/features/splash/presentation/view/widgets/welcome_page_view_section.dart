@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/constants.dart';
-import 'package:llegar/features/auth/presentation/view/log_in_with_view.dart';
+import 'package:llegar/features/auth/presentation/view/social_log_in_view.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/features/splash/presentation/view/widgets/welcome_page_view_builder.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -49,7 +49,7 @@ class _WelcomePageViewSectionState extends State<WelcomePageViewSection> {
             btnTitle: value ? 'Get Started' : 'Next',
             onPressed: () {
               if (value) {
-                Navigator.pushReplacementNamed(context, LogInWithView.id);
+                Navigator.pushReplacementNamed(context, SocialLogInView.id);
               } else {
                 _pageController.nextPage(
                     duration: const Duration(milliseconds: 550),
