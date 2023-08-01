@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:llegar/core/utils/app_colors.dart';
+import 'package:llegar/core/utils/app_config.dart';
 
 abstract class AppThemes {
   static ThemeData lightMode = ThemeData(
     scaffoldBackgroundColor: AppColors.kBackgroundColor,
+    checkboxTheme: CheckboxThemeData(
+      fillColor: const MaterialStatePropertyAll(AppColors.kPrimaryColor),
+      side: BorderSide(
+        color: AppColors.kPrimaryColor,
+        width: 1.5.w,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4),
+      ),
+    ),
     primarySwatch: const MaterialColor(
       0xFF092C4C,
       <int, Color>{

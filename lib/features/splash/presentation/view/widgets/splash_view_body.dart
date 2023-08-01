@@ -33,23 +33,43 @@ class SplashViewBody extends StatelessWidget {
         Positioned(
           right: 21.8.w,
           top: 89.h,
-          child: SvgPicture.asset(AppImages.imagesEllipse9),
+          child: SvgPicture.asset(
+            AppImages.imagesEllipse9,
+            // height: 64.h,
+            // width: 64.w,
+            // fit: BoxFit.fill,
+          ),
         ),
         Positioned(
           left: 0,
           top: 226.h,
-          child: SvgPicture.asset(AppImages.imagesEllipse10),
+          child: SvgPicture.asset(
+            AppImages.imagesEllipse10,
+            // height: 37.2.h,
+            // width: 37.2.w,
+            // fit: BoxFit.fill,
+          ),
         ),
         Positioned(
           left: 0,
           bottom: 87.37.h,
-          child: SvgPicture.asset(AppImages.imagesEllipse12),
+          child: SvgPicture.asset(
+            AppImages.imagesEllipse12,
+            // height: 139.9.h,
+            // width: 139.9.w,
+            // fit: BoxFit.fill,
+          ),
         ),
         Positioned(
           right: 0,
           bottom: 0,
-          child: SvgPicture.asset(AppImages.imagesEllipse11),
-        )
+          child: SvgPicture.asset(
+            AppImages.imagesEllipse11,
+            // height: 192.9.h,
+            // width: 192.9.w,
+            // fit: BoxFit.fill,
+          ),
+        ),
       ],
     );
   }

@@ -22,8 +22,9 @@ class WelcomePageViewItem extends StatelessWidget {
           image,
           width: 398.w,
           height: 390.h,
+          fit: BoxFit.fill,
         ),
-        SizedBox(height: 36.h),
+        const Spacer(),
         FittedBox(
           child: Text(
             title,

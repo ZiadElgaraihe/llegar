@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/features/auth/presentation/view/sign_up_view.dart';
+import 'package:llegar/features/auth/presentation/view/log_in_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/buttons/social_row_buttons.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/rows/auth_toggle_row.dart';
 
-class SocialLogInSection extends StatelessWidget {
-  const SocialLogInSection({super.key});
+class SocialSignUpSection extends StatelessWidget {
+  const SocialSignUpSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 18.h),
+        SizedBox(height: 37.h),
         SocialRowButtons(
           onGooglePressed: () {},
           onApplePressed: () {},
           onFacebookPressed: () {},
         ),
-        SizedBox(height: 24.68.h),
+        SizedBox(height: 29.68.h),
         AuthToggleRow(
-          rowTitle: 'Don\'t have an account?',
-          btnTitle: 'Sign Up',
+          rowTitle: 'Already have an account?',
+          btnTitle: 'Sign In',
           onTap: () {
-            Navigator.pushReplacementNamed(context, SignUpView.id);
+            Navigator.pushReplacementNamed(context, LogInView.id);
           },
         ),
       ],

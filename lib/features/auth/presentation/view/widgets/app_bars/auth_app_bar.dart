@@ -11,10 +11,13 @@ class AuthenticationAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
+    return Container(
+      margin: EdgeInsets.only(left: 23.w),
       alignment: Alignment.centerLeft,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+        },
         style: ButtonStyle(
           fixedSize: MaterialStatePropertyAll(
             Size(94.w, 34.h),

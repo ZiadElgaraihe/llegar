@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
@@ -10,8 +9,8 @@ import 'package:llegar/features/auth/presentation/view/widgets/rows/remember_me_
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/email_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/password_text_form_field.dart';
 
-class ClassicLogInSection extends StatelessWidget {
-  const ClassicLogInSection({super.key});
+class ClassicSignUpSection extends StatelessWidget {
+  const ClassicSignUpSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class ClassicLogInSection extends StatelessWidget {
         ),
         SizedBox(height: 18.2.h),
         Text(
-          'Login to your account',
+          'Create Your Account',
           style: TextStyles.textStyle32.copyWith(
             color: AppColors.kSecondaryColor,
           ),
@@ -38,20 +37,8 @@ class ClassicLogInSection extends StatelessWidget {
         SizedBox(height: 26.h),
         const RememberMeRow(),
         SizedBox(height: 24.h),
-        ColoredButton(btnTitle: 'Sign in', onPressed: () {}),
-        SizedBox(height: 4.h),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            'Forget the password?',
-            style: TextStyles.textStyle14.copyWith(
-              fontWeight: FontWeight.w500,
-              fontFamily: GoogleFonts.inter().fontFamily,
-              color: AppColors.kGreen,
-            ),
-          ),
-        ),
-        SizedBox(height: 2.7.h),
+        ColoredButton(btnTitle: 'Sign up', onPressed: () {}),
+        SizedBox(height: 31.h),
       ],
     );
   }
