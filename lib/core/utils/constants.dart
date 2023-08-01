@@ -26,3 +26,38 @@ const List<Map<String, String>> welcomePageViewItems = [
         'We provide a service Two factor\nauthentication To ensure that your account is\nsafe from hacking'
   },
 ];
+
+const List<String> genders = [
+    'Male',
+    'Female',
+  ];
+
+const List<String> cities = [
+  'Alexandria',
+  'Aswan',
+  'Asyut',
+  'Beheira',
+  'Beni Suef',
+  'Cairo',
+  'Damietta',
+  'Dakahlia',
+  'Faiyum',
+  'Gharbia',
+  'Giza',
+  'Ismailia',
+  'Kafr El Sheikh',
+  'Luxor',
+  'Matrouh',
+  'Minya',
+  'Monufia',
+  'New Valley',
+  'North Sinai',
+  'Port Said',
+  'Qalyubia',
+  'Qena',
+  'Red Sea',
+  'Sharqia',
+  'Sohag',
+  'South Sinai',
+  'Suez',
+];
