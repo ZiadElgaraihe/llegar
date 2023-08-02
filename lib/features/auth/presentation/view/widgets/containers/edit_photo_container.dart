@@ -11,12 +11,13 @@ class EditPhotoContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
     return Container(
-      height: 34.25.h,
+      height: width >= 600 ? 44.25.h : 34.25.h,
       width: 42.28.w,
       decoration: BoxDecoration(
         color: AppColors.kPrimaryColor,
-        borderRadius: BorderRadius.circular(10.w),
+        borderRadius: BorderRadius.circular(width >= 600 ? 10.h : 10.w),
       ),
       child: Material(
         color: Colors.transparent,

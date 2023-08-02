@@ -21,7 +21,6 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
       width: 294.w,
       child: TextFormField(
         controller: _controller,
-        keyboardType: TextInputType.datetime,
         style: TextStyles.textStyle18.copyWith(
           fontWeight: FontWeight.w400,
           fontFamily: GoogleFonts.poppins().fontFamily,
@@ -32,7 +31,7 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
           fillColor: AppColors.kLightGrey,
           contentPadding:
               EdgeInsets.symmetric(vertical: 14.5.h, horizontal: 16.w),
-          hintText: '1/1/2000',
+          hintText: 'dd/mm/yyyy',
           suffixIcon: Material(
             color: Colors.transparent,
             child: IconButton(
@@ -41,8 +40,11 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
                   context: context,
                   initialDate: DateTime(2000, 1, 1),
                   firstDate: DateTime(1950),
-                  lastDate: DateTime(DateTime.now().year - 10,
-                      DateTime.now().month, DateTime.now().day),
+                  lastDate: DateTime(
+                    DateTime.now().year - 10,
+                    DateTime.now().month,
+                    DateTime.now().day,
+                  ),
                 );
                 if (date != null) {
                   _controller.text = '${date.day}/${date.month}/${date.year}';
@@ -60,20 +62,6 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6.w),
             borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(6.w),
-            borderSide: BorderSide(
-              color: AppColors.kGreen,
-              width: 1.w,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(6.w),
-            borderSide: BorderSide(
-              color: Colors.red,
-              width: 1.w,
-            ),
           ),
         ),
       ),

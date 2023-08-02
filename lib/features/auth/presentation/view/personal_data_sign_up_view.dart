@@ -8,8 +8,11 @@ class PersonalDataSignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: PersonalDataSignUpViewBody(),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
+      child: const Scaffold(
+        body: PersonalDataSignUpViewBody(),
+      ),
     );
   }
 }

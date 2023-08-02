@@ -9,18 +9,15 @@ class LogInViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
-      child: const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            AuthenticationAppBar(),
-            ClassicLogInSection(),
-            OrDividerWidget(title: 'or continue with'),
-            SocialLogInSection()
-          ],
-        ),
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        children: [
+          AuthenticationAppBar(),
+          ClassicLogInSection(),
+          OrDividerWidget(title: 'or continue with'),
+          SocialLogInSection()
+        ],
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
+import 'package:llegar/core/utils/text_styles.dart';
 
 abstract class AppThemes {
   static ThemeData lightMode = ThemeData(
@@ -37,6 +38,11 @@ abstract class AppThemes {
               color: AppColors.kPrimaryColor,
             ),
           ),
+    ),
+    datePickerTheme: DatePickerThemeData(
+      dayStyle: TextStyles.textStyle20,
+      weekdayStyle: TextStyles.textStyle20,
+      yearStyle: TextStyles.textStyle20,
     ),
   );
 }

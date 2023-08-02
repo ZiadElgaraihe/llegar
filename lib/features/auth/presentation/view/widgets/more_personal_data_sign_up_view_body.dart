@@ -9,18 +9,15 @@ class MorePersonalDataSignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
-      child: const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            AuthenticationAppBar(),
-            PhoneNumberSection(),
-            LivePhotoSection(),
-            IdPhotoSection(),
-          ],
-        ),
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        children: [
+          AuthenticationAppBar(),
+          PhoneNumberSection(),
+          LivePhotoSection(),
+          IdPhotoSection(),
+        ],
       ),
     );
   }

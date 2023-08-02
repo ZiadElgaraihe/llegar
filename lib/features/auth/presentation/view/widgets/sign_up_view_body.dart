@@ -9,18 +9,15 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
-      child: const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            AuthenticationAppBar(),
-            ClassicSignUpSection(),
-            OrDividerWidget(title: 'or continue with'),
-            SocialSignUpSection(),
-          ],
-        ),
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        children: [
+          AuthenticationAppBar(),
+          ClassicSignUpSection(),
+          OrDividerWidget(title: 'or continue with'),
+          SocialSignUpSection(),
+        ],
       ),
     );
   }

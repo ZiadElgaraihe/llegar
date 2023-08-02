@@ -5,7 +5,13 @@ import 'package:llegar/core/utils/app_routes.dart';
 import 'package:llegar/core/utils/app_themes.dart';
 
 void main() {
-  runApp(const Llegar());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(
+      const Llegar(),
+    );
+  });
 }
 
 class Llegar extends StatelessWidget {
@@ -20,6 +26,7 @@ class Llegar extends StatelessWidget {
       ),
     );
     return MaterialApp(
+      title: 'LLEGAR',
       debugShowCheckedModeBanner: false,
       theme: AppThemes.lightMode,
       routes: AppRoutes.routes,
