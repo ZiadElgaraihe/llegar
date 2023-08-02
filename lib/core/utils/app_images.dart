@@ -3,6 +3,11 @@ abstract class AppImages {
   /// assets/images/apple_logo.svg
   static const String imagesAppleLogo = "assets/images/apple_logo.svg";
 
+  /// Assets for imagesBackgroundPhotoPng
+  /// assets/images/background_photo.png
+  static const String imagesBackgroundPhotoPng =
+      "assets/images/background_photo.png";
+
   /// Assets for imagesContinueWithApple
   /// assets/images/continue_with_apple.svg
   static const String imagesContinueWithApple =
@@ -41,6 +46,10 @@ abstract class AppImages {
   /// Assets for imagesGoogleLogo
   /// assets/images/google_logo.svg
   static const String imagesGoogleLogo = "assets/images/google_logo.svg";
+
+  /// Assets for imagesIdBackgroundPng
+  /// assets/images/id_background.png
+  static const String imagesIdBackgroundPng = "assets/images/id_background.png";
 
   /// Assets for imagesIdPicture
   /// assets/images/id_picture.svg

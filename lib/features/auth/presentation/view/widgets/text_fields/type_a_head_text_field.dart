@@ -11,7 +11,8 @@ class TypeAHeadTextField extends StatefulWidget {
   const TypeAHeadTextField({
     super.key,
     required this.hint,
-    required this.suggestionList, required this.suggestionListHeight,
+    required this.suggestionList,
+    required this.suggestionListHeight,
   });
 
   final String hint;
