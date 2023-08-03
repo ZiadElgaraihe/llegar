@@ -6,6 +6,7 @@ import 'package:llegar/core/utils/app_themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  //prevent app from being oriented
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:llegar/features/auth/presentation/view/successful_sign_up_view.dart';
+import 'package:llegar/features/auth/presentation/view/forget_password_verification_code_view.dart';
+import 'package:llegar/features/auth/presentation/view/forget_password_view.dart';
+import 'package:llegar/features/auth/presentation/view/new_password_view.dart';
+import 'package:llegar/features/auth/presentation/view/successful_view.dart';
 import 'package:llegar/features/auth/presentation/view/sign_up_verification_code_view.dart';
 import 'package:llegar/features/auth/presentation/view/log_in_view.dart';
 import 'package:llegar/features/auth/presentation/view/more_personal_data_sign_up_view.dart';
@@ -21,6 +24,10 @@ abstract class AppRoutes {
         const MorePersonalDataSignUpView(),
     SignUpVerificationCodeView.id: (context) =>
         const SignUpVerificationCodeView(),
-    SuccessfulSignUpView.id: (context) => const SuccessfulSignUpView(),
+    SuccessfulView.id: (context) => const SuccessfulView(),
+    ForgetPasswordView.id: (context) => const ForgetPasswordView(),
+    ForgetPasswordVerificationCodeView.id: (context) =>
+        const ForgetPasswordVerificationCodeView(),
+    NewPasswordView.id: (context) => const NewPasswordView(),
   };
 }

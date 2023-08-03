@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
-import 'package:llegar/features/auth/presentation/view/successful_view.dart';
+import 'package:llegar/features/auth/presentation/view/new_password_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/app_bars/auth_app_bar.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/sections/verification_code_view_sections/resend_code_section.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/otp_text_field.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/texts/page_title_text.dart';
 
-class SignUpVerificationCodeViewBody extends StatelessWidget {
-  const SignUpVerificationCodeViewBody({super.key});
+class ForgetPasswordVerificationCodeViewBody extends StatelessWidget {
+  const ForgetPasswordVerificationCodeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,7 @@ class SignUpVerificationCodeViewBody extends StatelessWidget {
           ColoredButton(
             btnTitle: 'Continue',
             onPressed: () {
-              Navigator.pushNamed(context, SuccessfulView.id,
-                  arguments: 'Successful Sign Up');
+              Navigator.pushNamed(context, NewPasswordView.id);
             },
           ),
         ],

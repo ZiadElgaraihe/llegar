@@ -6,6 +6,7 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/features/auth/presentation/view/forget_password_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/rows/remember_me_row.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/email_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/password_text_form_field.dart';
@@ -41,7 +42,9 @@ class ClassicLogInSection extends StatelessWidget {
         ColoredButton(btnTitle: 'Sign in', onPressed: () {}),
         SizedBox(height: 4.h),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, ForgetPasswordView.id);
+          },
           child: Text(
             'Forget the password?',
             style: TextStyles.textStyle14.copyWith(

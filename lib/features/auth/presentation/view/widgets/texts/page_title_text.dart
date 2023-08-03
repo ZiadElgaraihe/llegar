@@ -53,7 +53,6 @@ class PageTitleText extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 40.h),
       ],
     );
   }

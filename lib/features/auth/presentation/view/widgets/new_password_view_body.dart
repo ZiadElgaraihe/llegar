@@ -4,12 +4,12 @@ import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/features/auth/presentation/view/successful_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/app_bars/auth_app_bar.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/sections/verification_code_view_sections/resend_code_section.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/text_fields/otp_text_field.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/rows/remember_me_row.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/sections/new_password_view_sections/create_password_section.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/texts/page_title_text.dart';
 
-class SignUpVerificationCodeViewBody extends StatelessWidget {
-  const SignUpVerificationCodeViewBody({super.key});
+class NewPasswordViewBody extends StatelessWidget {
+  const NewPasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +18,25 @@ class SignUpVerificationCodeViewBody extends StatelessWidget {
       child: Column(
         children: [
           const AuthenticationAppBar(),
+          SizedBox(height: 26.h),
           const PageTitleText(
-            title: 'You’ve got mail',
+            title: 'Create new password',
             content:
-                'We have sent the OTP verification code\nto your email address. Check your\nemail and enter the code below',
-            titleImage: AppImages.imagesMailImage,
+                'Save the new password in a safe place,\nif you forget it then you have to do a\nforgot password again.',
+            titleImage: AppImages.imagesLockKey,
           ),
-          SizedBox(height: 28.h),
-          const OtpTextField(),
-          const ResendCodeSection(),
+          const CreatePasswordSection(),
+          Container(
+            margin: EdgeInsets.only(left: 16.w),
+            alignment: Alignment.centerLeft,
+            child: const RememberMeRow(),
+          ),
+          SizedBox(height: 243.h),
           ColoredButton(
             btnTitle: 'Continue',
             onPressed: () {
               Navigator.pushNamed(context, SuccessfulView.id,
-                  arguments: 'Successful Sign Up');
+                  arguments: 'Reset Password Done');
             },
           ),
         ],

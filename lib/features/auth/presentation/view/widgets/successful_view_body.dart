@@ -6,11 +6,12 @@ import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 
-class SuccessfulSignUpViewBody extends StatelessWidget {
-  const SuccessfulSignUpViewBody({super.key});
+class SuccessfulViewBody extends StatelessWidget {
+  const SuccessfulViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String pageTitle = ModalRoute.of(context)!.settings.arguments as String;
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +25,7 @@ class SuccessfulSignUpViewBody extends StatelessWidget {
           ),
           SizedBox(height: 124.h),
           Text(
-            'Successful Sign Up',
+            pageTitle,
             style: TextStyles.textStyle40,
           ),
           SizedBox(height: 24.h),

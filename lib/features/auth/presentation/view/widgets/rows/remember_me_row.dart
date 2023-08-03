@@ -16,7 +16,7 @@ class _RememberMeRowState extends State<RememberMeRow> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
           width: 20.w,
