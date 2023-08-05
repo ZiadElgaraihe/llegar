@@ -6,7 +6,7 @@ import 'package:llegar/features/auth/data/models/user_model.dart';
 import 'package:llegar/features/auth/data/repos/log_in_repo.dart';
 
 class LogInService implements LogInRepo {
-  late DioHelper dioHelper;
+  final DioHelper dioHelper;
 
   LogInService({required this.dioHelper});
 
