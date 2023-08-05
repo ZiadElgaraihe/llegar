@@ -35,9 +35,9 @@ class SplashViewBody extends StatelessWidget {
           top: 89.h,
           child: SvgPicture.asset(
             AppImages.imagesEllipse9,
-            // height: 64.h,
-            // width: 64.w,
-            // fit: BoxFit.fill,
+            height: 77.5.h,
+            width: 77.5.w,
+            fit: BoxFit.fill,
           ),
         ),
         Positioned(
@@ -45,9 +45,9 @@ class SplashViewBody extends StatelessWidget {
           top: 226.h,
           child: SvgPicture.asset(
             AppImages.imagesEllipse10,
-            // height: 37.2.h,
-            // width: 37.2.w,
-            // fit: BoxFit.fill,
+            height: 45.h,
+            width: 45.w,
+            fit: BoxFit.fill,
           ),
         ),
         Positioned(
@@ -55,9 +55,9 @@ class SplashViewBody extends StatelessWidget {
           bottom: 87.37.h,
           child: SvgPicture.asset(
             AppImages.imagesEllipse12,
-            // height: 139.9.h,
-            // width: 139.9.w,
-            // fit: BoxFit.fill,
+            height: 167.5.h,
+            width: 167.5.w,
+            fit: BoxFit.fill,
           ),
         ),
         Positioned(
@@ -65,9 +65,9 @@ class SplashViewBody extends StatelessWidget {
           bottom: 0,
           child: SvgPicture.asset(
             AppImages.imagesEllipse11,
-            // height: 192.9.h,
-            // width: 192.9.w,
-            // fit: BoxFit.fill,
+            height: 133.5.h,
+            width: 133.5.w,
+            fit: BoxFit.fill,
           ),
         ),
       ],

@@ -22,7 +22,7 @@ class ColoredButton extends StatelessWidget {
             const MaterialStatePropertyAll(AppColors.kPrimaryColor),
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(25.w),
           ),
         ),
         fixedSize: MaterialStatePropertyAll(

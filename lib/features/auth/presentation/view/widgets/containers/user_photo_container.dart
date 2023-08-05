@@ -8,10 +8,9 @@ class UserPhotoContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.sizeOf(context).width;
     return Container(
       height: 225.h,
-      width: width >= 600 ? 190.w : 225.w,
+      width: AppConfig.sizeData.width >= 600 ? 190.w : 225.w,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(

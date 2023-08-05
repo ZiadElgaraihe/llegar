@@ -20,7 +20,6 @@ class _OtpTextFieldState extends State<OtpTextField> {
       children: List.generate(
         4,
         (index) => Container(
-          height: 60.h,
           width: 83.w,
           margin: EdgeInsets.symmetric(horizontal: 4.w),
           decoration: BoxDecoration(
@@ -50,6 +49,7 @@ class _OtpTextFieldState extends State<OtpTextField> {
             showCursor: false,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(vertical: 24.h),
               counterText: '',
               border: InputBorder.none,
               focusedBorder: OutlineInputBorder(

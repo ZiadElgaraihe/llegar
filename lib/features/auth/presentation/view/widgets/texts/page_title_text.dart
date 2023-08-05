@@ -26,9 +26,7 @@ class PageTitleText extends StatelessWidget {
             SizedBox(width: 16.w),
             Text(
               title,
-              style: TextStyles.textStyle32.copyWith(
-                color: AppColors.kSecondaryColor,
-              ),
+              style: TextStyles.textStyle32,
             ),
             SizedBox(width: 16.w),
             SvgPicture.asset(

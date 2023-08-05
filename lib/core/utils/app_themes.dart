@@ -14,7 +14,8 @@ abstract class AppThemes {
         width: 1.5.w,
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius:
+            BorderRadius.circular(AppConfig.sizeData.width >= 600 ? 2.w : 4.w),
       ),
     ),
     primarySwatch: const MaterialColor(
