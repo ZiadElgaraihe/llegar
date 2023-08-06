@@ -30,11 +30,13 @@ class LogInCubit extends Cubit<LogInState> {
       password: password!,
     );
     result.fold(
+      //error
       (serverFailure) {
         emit(
           LogInFailure(errMessage: serverFailure.errMessage),
         );
       },
+      //success
       (userModel) {
         _userModelCubit.userModel = userModel;
         emit(LogInSuccess());

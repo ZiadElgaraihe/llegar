@@ -6,7 +6,6 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_routes.dart';
 import 'package:llegar/core/utils/app_themes.dart';
 import 'package:llegar/core/utils/service_locator.dart';
-import 'package:llegar/features/auth/data/services/sign_up_service.dart';
 import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 void main() {
@@ -38,10 +37,7 @@ class Llegar extends StatelessWidget {
           create: (context) => getIt.get<UserModelCubit>(),
         ),
         BlocProvider<SignUpCubit>(
-          create: (context) => SignUpCubit(
-            signUpService: getIt.get<SignUpService>(),
-            userModelCubit: getIt.get<UserModelCubit>(),
-          ),
+          create: (context) => getIt.get<SignUpCubit>(),
         ),
       ],
       child: MaterialApp(

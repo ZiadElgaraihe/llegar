@@ -4,7 +4,10 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
 class OtpTextField extends StatefulWidget {
-  const OtpTextField({super.key});
+  const OtpTextField(
+      {super.key, required this.resetCodeControllers, });
+
+  final List<TextEditingController> resetCodeControllers;
 
   @override
   State<OtpTextField> createState() => _OtpTextFieldState();
@@ -12,6 +15,11 @@ class OtpTextField extends StatefulWidget {
 
 class _OtpTextFieldState extends State<OtpTextField> {
   List<FocusNode> focusNodes = List.generate(4, (index) => FocusNode());
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +35,7 @@ class _OtpTextFieldState extends State<OtpTextField> {
             borderRadius: BorderRadius.circular(5.w),
           ),
           child: TextField(
+            controller: widget.resetCodeControllers[index],
             maxLength: 1,
             focusNode: focusNodes[index],
             onChanged: (value) {

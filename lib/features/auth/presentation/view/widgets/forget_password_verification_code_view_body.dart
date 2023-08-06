@@ -25,7 +25,7 @@ class ForgetPasswordVerificationCodeViewBody extends StatelessWidget {
             titleImage: AppImages.imagesMailImage,
           ),
           SizedBox(height: 28.h),
-          const OtpTextField(),
+          // const OtpTextField(),
           const ResendCodeSection(),
           ColoredButton(
             btnTitle: 'Continue',

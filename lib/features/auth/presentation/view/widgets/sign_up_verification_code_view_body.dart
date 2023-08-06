@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
-import 'package:llegar/features/auth/presentation/view/successful_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/app_bars/auth_app_bar.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/blocs/verify_sign_up_bloc_consumer.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/sections/verification_code_view_sections/resend_code_section.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/otp_text_field.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/texts/page_title_text.dart';
 
-class SignUpVerificationCodeViewBody extends StatelessWidget {
+class SignUpVerificationCodeViewBody extends StatefulWidget {
   const SignUpVerificationCodeViewBody({super.key});
+
+  @override
+  State<SignUpVerificationCodeViewBody> createState() =>
+      _SignUpVerificationCodeViewBodyState();
+}
+
+class _SignUpVerificationCodeViewBodyState
+    extends State<SignUpVerificationCodeViewBody> {
+  final List<TextEditingController> _resetCodeControllers = List.generate(
+    4,
+    (index) => TextEditingController(),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +36,12 @@ class SignUpVerificationCodeViewBody extends StatelessWidget {
             titleImage: AppImages.imagesMailImage,
           ),
           SizedBox(height: 28.h),
-          const OtpTextField(),
+          OtpTextField(
+            resetCodeControllers: _resetCodeControllers,
+          ),
           const ResendCodeSection(),
-          ColoredButton(
-            btnTitle: 'Continue',
-            onPressed: () {
-              Navigator.pushNamed(context, SuccessfulView.id,
-                  arguments: 'Successful Sign Up');
-            },
+          VerifySignUpBlocConsumer(
+            resetCodeControllers: _resetCodeControllers,
           ),
         ],
       ),
