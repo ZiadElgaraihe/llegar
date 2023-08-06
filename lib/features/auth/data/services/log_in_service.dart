@@ -8,8 +8,8 @@ import 'package:llegar/features/auth/data/repos/log_in_repo.dart';
 class LogInService implements LogInRepo {
   late DioHelper _dioHelper;
 
-  LogInService({required DioHelper dioHelper}){
-    _dioHelper= dioHelper;
+  LogInService({required DioHelper dioHelper}) {
+    _dioHelper = dioHelper;
   }
 
   @override
@@ -24,14 +24,16 @@ class LogInService implements LogInRepo {
         endPoint: 'users/login',
       );
 
-      return right(UserModel.fromJson(data: data));
-    } on DioException catch (error){
-        return left(
-          ServerFailure.fromDioException(
-            dioException: error,
-          ),
-        );
-    } catch (error){
+      return right(
+        UserModel.fromJson(data: data),
+      );
+    } on DioException catch (error) {
+      return left(
+        ServerFailure.fromDioException(
+          dioException: error,
+        ),
+      );
+    } catch (error) {
       return left(
         ServerFailure(
           errMessage: error.toString(),

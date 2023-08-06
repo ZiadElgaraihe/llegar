@@ -58,7 +58,29 @@ class SignUpService implements SignUpRepo {
     required String resetCode,
     required String token,
   }) async {
-    // TODO: implement verifySignUp
-    throw UnimplementedError();
+    try {
+      Map<String, dynamic> data = await _dioHelper.postRequest(
+        body: {
+          'resetCode': resetCode,
+        },
+        endPoint: 'users/verfiySignUp',
+        token: token,
+      );
+      return right(
+        UserModel.fromJson(data: data),
+      );
+    } on DioException catch (error) {
+      return left(
+        ServerFailure.fromDioException(
+          dioException: error,
+        ),
+      );
+    } catch (error) {
+      return left(
+        ServerFailure(
+          errMessage: error.toString(),
+        ),
+      );
+    }
   }
 }
