@@ -4,12 +4,13 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/log_in_view_functions.dart';
+import 'package:llegar/features/auth/functions/change_text_field_icon_color.dart';
+import 'package:llegar/features/auth/functions/validators/email_validator.dart';
 
 class EmailTextFormField extends StatefulWidget {
-  const EmailTextFormField({super.key, required this.controller});
+  const EmailTextFormField({super.key, required this.onSaved});
 
-  final TextEditingController controller;
+  final void Function(String? newValue) onSaved;
 
   @override
   State<EmailTextFormField> createState() => _EmailTextFormFieldState();
@@ -17,6 +18,7 @@ class EmailTextFormField extends StatefulWidget {
 
 class _EmailTextFormFieldState extends State<EmailTextFormField> {
   final FocusNode _focusNode = FocusNode();
+  final TextEditingController _controller = TextEditingController();
   final ValueNotifier<Color> _iconColor =
       ValueNotifier<Color>(AppColors.kDarkGrey);
 
@@ -26,16 +28,17 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
       width: 398.w,
       child: TextFormField(
         focusNode: _focusNode,
-        controller: widget.controller,
+        controller: _controller,
         keyboardType: TextInputType.emailAddress,
         onTap: () {
-          changeIconColor(
+          changeTextFieldIconColor(
             focusNode: _focusNode,
-            controller: widget.controller,
+            controller: _controller,
             iconColor: _iconColor,
           );
         },
         validator: emailValidator,
+        onSaved: widget.onSaved,
         style: TextStyles.textStyle15,
         decoration: InputDecoration(
           filled: true,

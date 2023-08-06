@@ -5,9 +5,12 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/auth/functions/validators/birth_date_validator.dart';
 
 class BirthDateTextFormField extends StatefulWidget {
-  const BirthDateTextFormField({super.key});
+  const BirthDateTextFormField({super.key, required this.onSaved});
+
+  final void Function(String? newValue) onSaved;
 
   @override
   State<BirthDateTextFormField> createState() => _BirthDateTextFormFieldState();
@@ -25,13 +28,15 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
           fontWeight: FontWeight.w400,
           fontFamily: GoogleFonts.poppins().fontFamily,
         ),
+        validator: birthDateValidator,
+        onSaved: widget.onSaved,
         readOnly: true,
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.kLightGrey,
           contentPadding:
               EdgeInsets.symmetric(vertical: 14.5.h, horizontal: 16.w),
-          hintText: 'dd/mm/yyyy',
+          hintText: 'yyyy/mm/dd',
           suffixIcon: Material(
             color: Colors.transparent,
             child: IconButton(
@@ -47,7 +52,13 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
                   ),
                 );
                 if (date != null) {
-                  _controller.text = '${date.day}/${date.month}/${date.year}';
+                  String day = date.day.toString().length == 1
+                      ? '0${date.day}'
+                      : '${date.day}';
+                  String month = date.month.toString().length == 1
+                      ? '0${date.month}'
+                      : '${date.month}';
+                  _controller.text = '${date.year}/$month/$day';
                 }
               },
               splashRadius: 20,

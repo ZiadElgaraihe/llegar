@@ -6,7 +6,6 @@ import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/features/auth/presentation/view/forget_password_verification_code_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/app_bars/auth_app_bar.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/text_fields/data_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/texts/page_title_text.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
@@ -37,10 +36,11 @@ class ForgetPasswordViewBody extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16.h),
-          const DataTextFormField(
-            hint: 'Email',
-            keyboardType: TextInputType.emailAddress,
-          ),
+          // DataTextFormField(
+          //   hint: 'Email',
+          //   keyboardType: TextInputType.emailAddress,
+          //   controller: TextEditingController(),
+          // ),
           SizedBox(height: 438.h),
           ColoredButton(
             btnTitle: 'Continue',

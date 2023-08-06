@@ -6,32 +6,37 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/auth/functions/validators/type_a_head_validator.dart';
 
-class TypeAHeadTextField extends StatefulWidget {
-  const TypeAHeadTextField({
+class TypeAHeadTextFormField extends StatefulWidget {
+  const TypeAHeadTextFormField({
     super.key,
     required this.hint,
     required this.suggestionList,
     required this.suggestionListHeight,
+    required this.onSaved,
   });
 
   final String hint;
   final double suggestionListHeight;
   final List<String> suggestionList;
+  final void Function(String? newValue) onSaved;
 
   @override
-  State<TypeAHeadTextField> createState() => _TypeAHeadTextFieldState();
+  State<TypeAHeadTextFormField> createState() => _TypeAHeadTextFormFieldState();
 }
 
-class _TypeAHeadTextFieldState extends State<TypeAHeadTextField> {
+class _TypeAHeadTextFormFieldState extends State<TypeAHeadTextFormField> {
   final TextEditingController _controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 398.w,
-      height: 36.h,
-      child: TypeAheadField(
+      child: TypeAheadFormField(
+        validator: (value) {
+          return typeAHeadValidator(value, widget.suggestionList);
+        },
+        onSaved: widget.onSaved,
         textFieldConfiguration: TextFieldConfiguration(
           controller: _controller,
           style: TextStyles.textStyle15,

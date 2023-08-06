@@ -15,7 +15,7 @@ class ServerFailure {
       return ServerFailure(errMessage: '404 Page Not Found');
     } else if (statusCode == 500) {
       return ServerFailure(
-        errMessage: 'Internal Server Error, Please try later',
+        errMessage: response['message'],
       );
     } else {
       return ServerFailure(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/constants.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
-import 'package:llegar/features/auth/presentation/view/more_personal_data_sign_up_view.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/text_fields/type_a_head_text_field.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/text_fields/type_a_head_text_form_field.dart';
+import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 class GenderAndCitySection extends StatelessWidget {
   const GenderAndCitySection({super.key});
@@ -13,24 +13,24 @@ class GenderAndCitySection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 39.57.h),
-        TypeAHeadTextField(
+        TypeAHeadTextFormField(
           hint: 'Gender',
           suggestionList: genders,
           suggestionListHeight: 75.h,
+          onSaved: (newValue) {
+            context.read<SignUpCubit>().gender = newValue;
+          },
         ),
         SizedBox(height: 100.h),
-        TypeAHeadTextField(
+        TypeAHeadTextFormField(
           hint: 'City',
           suggestionList: cities,
           suggestionListHeight: 175.h,
-        ),
-        SizedBox(height: 206.h),
-        ColoredButton(
-          btnTitle: 'Continue',
-          onPressed: () {
-            Navigator.pushNamed(context, MorePersonalDataSignUpView.id);
+          onSaved: (newValue) {
+            context.read<SignUpCubit>().city = newValue;
           },
         ),
+        SizedBox(height: 206.h),
       ],
     );
   }

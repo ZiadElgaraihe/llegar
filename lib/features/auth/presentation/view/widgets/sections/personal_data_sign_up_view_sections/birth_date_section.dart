@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/birth_date_text_form_field.dart';
+import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 class BirthDateSection extends StatelessWidget {
   const BirthDateSection({super.key});
@@ -35,7 +37,11 @@ class BirthDateSection extends StatelessWidget {
                 ),
               ],
             ),
-            const BirthDateTextFormField(),
+            BirthDateTextFormField(
+              onSaved: (newValue) {
+                context.read<SignUpCubit>().birthDate = newValue;
+              },
+            ),
           ],
         ),
       ),

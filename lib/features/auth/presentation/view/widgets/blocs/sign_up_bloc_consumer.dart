@@ -1,41 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
 import 'package:llegar/core/widgets/loading_colored_button.dart';
-import 'package:llegar/features/auth/presentation/view_model/log_in_cubit/log_in_cubit.dart';
+import 'package:llegar/features/auth/presentation/view/sign_up_verification_code_view.dart';
+import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
-class LogInBlocConsumer extends StatelessWidget {
-  const LogInBlocConsumer({
+class SignUpBlocConsumer extends StatelessWidget {
+  const SignUpBlocConsumer({
     super.key,
     required GlobalKey<FormState> formKey,
-  })  : _formKey = formKey;
+  }) : _formKey = formKey;
 
   final GlobalKey<FormState> _formKey;
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LogInCubit, LogInState>(
+    return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
-        if (state is LogInSuccess) {
-          print(context.read<UserModelCubit>().userModel?.email);
-        } else if (state is LogInFailure) {
+        if (state is SignUpSuccess) {
+          Navigator.pushNamed(context, SignUpVerificationCodeView.id);
+        } else if (state is SignUpFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             errorSnackBar(state.errMessage),
           );
         }
       },
       builder: (context, state) {
-        if (state is LogInLoading) {
+        if (state is SignUpLoading) {
           return const LoadingColoredButton();
         } else {
           return ColoredButton(
-            btnTitle: 'Sign in',
-            onPressed: () async {
+            btnTitle: 'Continue',
+            onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                context.read<LogInCubit>().logIn();
+                context.read<SignUpCubit>().signUp();
               }
             },
           );

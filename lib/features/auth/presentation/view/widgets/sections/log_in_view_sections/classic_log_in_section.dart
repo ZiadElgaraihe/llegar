@@ -17,26 +17,18 @@ class ClassicLogInSection extends StatefulWidget {
 
 class _ClassicLogInSectionState extends State<ClassicLogInSection> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         LogInViewForm(
-          formKey: _formKey,
-          emailController: _emailController,
-          passwordController: _passwordController,
+          formKey: _formKey
         ),
         SizedBox(height: 26.h),
         const RememberMeRow(),
         SizedBox(height: 24.h),
-        LogInBlocConsumer(
-          formKey: _formKey,
-          emailController: _emailController,
-          passwordController: _passwordController,
-        ),
+        LogInBlocConsumer(formKey: _formKey),
         SizedBox(height: 4.h),
         TextButton(
           onPressed: () {

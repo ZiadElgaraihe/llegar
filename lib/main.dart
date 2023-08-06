@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_routes.dart';
 import 'package:llegar/core/utils/app_themes.dart';
 import 'package:llegar/core/utils/service_locator.dart';
-import 'package:llegar/features/auth/data/services/log_in_service.dart';
-import 'package:llegar/features/auth/presentation/view_model/log_in_cubit/log_in_cubit.dart';
+import 'package:llegar/features/auth/data/services/sign_up_service.dart';
+import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,10 +32,17 @@ class Llegar extends StatelessWidget {
         statusBarColor: Colors.transparent,
       ),
     );
-    return BlocProvider<LogInCubit>(
-      create: (context) => LogInCubit(
-        logInService: getIt.get<LogInService>(),
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<UserModelCubit>(
+          create: (context) => getIt.get<UserModelCubit>(),
+        ),
+        BlocProvider<SignUpCubit>(
+          create: (context) => SignUpCubit(
+            signUpService: getIt.get<SignUpService>(),
+          ),
+        ),
+      ],
       child: MaterialApp(
         title: 'LLEGAR',
         debugShowCheckedModeBanner: false,

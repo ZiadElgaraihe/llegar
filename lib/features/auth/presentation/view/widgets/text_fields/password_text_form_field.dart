@@ -4,12 +4,13 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/log_in_view_functions.dart';
+import 'package:llegar/features/auth/functions/change_text_field_icon_color.dart';
+import 'package:llegar/features/auth/functions/validators/password_validator.dart';
 
 class PasswordTextFormField extends StatefulWidget {
-  const PasswordTextFormField({super.key, required this.controller});
+  const PasswordTextFormField({super.key, required this.onSaved});
 
-  final TextEditingController controller;
+  final void Function(String? newValue) onSaved;
 
   @override
   State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
@@ -17,6 +18,7 @@ class PasswordTextFormField extends StatefulWidget {
 
 class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
   final FocusNode _focusNode = FocusNode();
+  final TextEditingController _controller = TextEditingController();
   final ValueNotifier<bool> _isVisible = ValueNotifier<bool>(false);
   final ValueNotifier<Color> _iconColor =
       ValueNotifier<Color>(AppColors.kDarkGrey);
@@ -29,15 +31,16 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
         valueListenable: _isVisible,
         builder: (context, isVisible, child) => TextFormField(
           focusNode: _focusNode,
-          controller: widget.controller,
+          controller: _controller,
           onTap: () {
-            changeIconColor(
+            changeTextFieldIconColor(
               focusNode: _focusNode,
-              controller: widget.controller,
+              controller: _controller,
               iconColor: _iconColor,
             );
           },
           validator: passwordValidator,
+          onSaved: widget.onSaved,
           style: TextStyles.textStyle15,
           obscureText: !isVisible,
           keyboardType: TextInputType.visiblePassword,
