@@ -6,15 +6,17 @@ import 'package:llegar/features/auth/data/models/user_model.dart';
 import 'package:llegar/features/auth/data/repos/log_in_repo.dart';
 
 class LogInService implements LogInRepo {
-  final DioHelper dioHelper;
+  late DioHelper _dioHelper;
 
-  LogInService({required this.dioHelper});
+  LogInService({required DioHelper dioHelper}){
+    _dioHelper= dioHelper;
+  }
 
   @override
   Future<Either<ServerFailure, UserModel>> logIn(
       {required String email, required String password}) async {
     try {
-      Map<String, dynamic> data = await dioHelper.postRequest(
+      Map<String, dynamic> data = await _dioHelper.postRequest(
         body: {
           'email': email,
           'password': password,
