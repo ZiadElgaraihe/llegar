@@ -4,9 +4,12 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/auth/functions/log_in_view_functions.dart';
 
 class PasswordTextFormField extends StatefulWidget {
-  const PasswordTextFormField({super.key});
+  const PasswordTextFormField({super.key, required this.controller});
+
+  final TextEditingController controller;
 
   @override
   State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
@@ -14,7 +17,6 @@ class PasswordTextFormField extends StatefulWidget {
 
 class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
   final FocusNode _focusNode = FocusNode();
-  final TextEditingController _controller = TextEditingController();
   final ValueNotifier<bool> _isVisible = ValueNotifier<bool>(false);
   final ValueNotifier<Color> _iconColor =
       ValueNotifier<Color>(AppColors.kDarkGrey);
@@ -27,20 +29,15 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
         valueListenable: _isVisible,
         builder: (context, isVisible, child) => TextFormField(
           focusNode: _focusNode,
-          controller: _controller,
+          controller: widget.controller,
           onTap: () {
-            _focusNode.addListener(
-              () {
-                if (!_focusNode.hasFocus && _controller.text.isNotEmpty) {
-                  _iconColor.value = AppColors.kSecondaryColor;
-                } else if (!_focusNode.hasFocus && _controller.text.isEmpty) {
-                  _iconColor.value = AppColors.kDarkGrey;
-                } else {
-                  _iconColor.value = AppColors.kGreen;
-                }
-              },
+            changeIconColor(
+              focusNode: _focusNode,
+              controller: widget.controller,
+              iconColor: _iconColor,
             );
           },
+          validator: passwordValidator,
           style: TextStyles.textStyle15,
           obscureText: !isVisible,
           keyboardType: TextInputType.visiblePassword,

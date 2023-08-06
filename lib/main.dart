@@ -9,8 +9,8 @@ import 'package:llegar/features/auth/data/services/log_in_service.dart';
 import 'package:llegar/features/auth/presentation/view_model/log_in_cubit/log_in_cubit.dart';
 
 void main() {
-  setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
+  setupServiceLocator();
   //prevent app from being oriented
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {

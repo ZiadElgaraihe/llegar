@@ -5,10 +5,12 @@ import 'package:llegar/features/auth/data/services/log_in_service.dart';
 final GetIt getIt = GetIt.instance;
 
 void setupServiceLocator() {
+  getIt.registerSingleton<DioHelper>(
+    DioHelper(),
+  );
   getIt.registerSingleton<LogInService>(
     LogInService(
       dioHelper: getIt.get<DioHelper>(),
     ),
   );
-  getIt.registerSingleton<DioHelper>(DioHelper(),);
 }

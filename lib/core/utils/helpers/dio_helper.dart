@@ -6,7 +6,7 @@ class DioHelper {
   DioHelper() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: 'http://192.168.1.4:8000/api/v1/',
+        baseUrl: 'http://192.168.1.5:8000/api/v1/',
       ),
     );
   }
@@ -26,6 +26,7 @@ class DioHelper {
 
     Response response = await _dio.post(
       endPoint,
+      data: body,
       options: Options(
         headers: headers,
       ),

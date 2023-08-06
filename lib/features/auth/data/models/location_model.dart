@@ -12,7 +12,7 @@ class LocationModel {
   factory LocationModel.fromJson({required Map<String, dynamic> data}) {
     return LocationModel(
       address: data['address'],
-      coordinates: data['coordinates'],
+      coordinates: LatLng(data['coordinates'][1], data['coordinates'][0]),
     );
   }
 }

@@ -1,25 +1,25 @@
 import 'package:dio/dio.dart';
 
-class ServerFailure{
+class ServerFailure {
   String errMessage;
 
   ServerFailure({required this.errMessage});
 
   factory ServerFailure._badResponse({
     required int statusCode,
-    required dynamic response,
+    required Map<String, dynamic> response,
   }) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(errMessage: response['message']);
     } else if (statusCode == 404) {
-      return ServerFailure(errMessage: 'Page not founded');
+      return ServerFailure(errMessage: '404 Page Not Found');
     } else if (statusCode == 500) {
       return ServerFailure(
-        errMessage: 'Internal server error, Please try later',
+        errMessage: 'Internal Server Error, Please try later',
       );
     } else {
       return ServerFailure(
-        errMessage: 'Oops unexpected error occurs, Please try again',
+        errMessage: 'Oops unexpected error occurred, Please try again',
       );
     }
   }
@@ -38,14 +38,14 @@ class ServerFailure{
       case DioExceptionType.sendTimeout:
         return ServerFailure(
           errMessage:
-              'Sending data to server takes too much time, please try again',
+              'Sending data to server takes too much time, check your internet connection.',
         );
       //the client is waiting to receive data from the server,
       // but the server does not send a response within the specified time limit
       case DioExceptionType.receiveTimeout:
         return ServerFailure(
           errMessage:
-              'Receiving data from server takes too much time, please try again',
+              'Receiving data from server takes too much time, check your internet connection.',
         );
       //there is an error in the network
       case DioExceptionType.connectionError:
@@ -58,7 +58,7 @@ class ServerFailure{
       case DioExceptionType.badResponse:
         return ServerFailure._badResponse(
           statusCode: dioException.response!.statusCode!,
-          response: dioException.response,
+          response: dioException.response!.data,
         );
       //there is a security or privacy issues
       case DioExceptionType.badCertificate:
@@ -69,7 +69,7 @@ class ServerFailure{
       //the default errMessage
       default:
         return ServerFailure(
-          errMessage: 'Oops unexpected error occurs, Please try again',
+          errMessage: 'Oops unexpected error occurred, Please try again',
         );
     }
   }

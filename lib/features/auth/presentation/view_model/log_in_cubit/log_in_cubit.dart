@@ -8,9 +8,11 @@ import 'package:llegar/features/auth/data/services/log_in_service.dart';
 part 'log_in_state.dart';
 
 class LogInCubit extends Cubit<LogInState> {
-  LogInCubit({required this.logInService}) : super(LogInInitial());
+  LogInCubit({required LogInService logInService}) : super(LogInInitial()) {
+    _logInService = logInService;
+  }
 
-  final LogInService logInService;
+  late LogInService _logInService;
 
   UserModel? userModel;
 
@@ -19,7 +21,7 @@ class LogInCubit extends Cubit<LogInState> {
     required String password,
   }) async {
     emit(LogInLoading());
-    Either<ServerFailure, UserModel> result = await logInService.logIn(
+    Either<ServerFailure, UserModel> result = await _logInService.logIn(
       email: email,
       password: password,
     );
