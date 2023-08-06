@@ -40,6 +40,7 @@ class Llegar extends StatelessWidget {
         BlocProvider<SignUpCubit>(
           create: (context) => SignUpCubit(
             signUpService: getIt.get<SignUpService>(),
+            userModelCubit: getIt.get<UserModelCubit>(),
           ),
         ),
       ],
