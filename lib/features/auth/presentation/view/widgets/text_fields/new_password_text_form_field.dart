@@ -4,9 +4,17 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
 class NewPasswordTextFormField extends StatefulWidget {
-  const NewPasswordTextFormField({super.key, required this.hint});
+  const NewPasswordTextFormField({
+    super.key,
+    required this.hint,
+    required this.validator,
+    this.onSaved, required this.controller,
+  });
 
   final String hint;
+  final TextEditingController controller;
+  final String? Function(String? value) validator;
+  final void Function(String? newValue)? onSaved;
 
   @override
   State<NewPasswordTextFormField> createState() =>
@@ -15,7 +23,7 @@ class NewPasswordTextFormField extends StatefulWidget {
 
 class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
   final FocusNode _focusNode = FocusNode();
-  final TextEditingController _controller = TextEditingController();
+  // final TextEditingController _controller = TextEditingController();
   final ValueNotifier<bool> _isVisible = ValueNotifier<bool>(false);
   final ValueNotifier<Color> _iconColor =
       ValueNotifier<Color>(AppColors.kDarkGrey);
@@ -28,13 +36,13 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
         valueListenable: _isVisible,
         builder: (context, isVisible, child) => TextFormField(
           focusNode: _focusNode,
-          controller: _controller,
+          controller: widget.controller,
           onTap: () {
             _focusNode.addListener(
               () {
-                if (!_focusNode.hasFocus && _controller.text.isNotEmpty) {
+                if (!_focusNode.hasFocus && widget.controller.text.isNotEmpty) {
                   _iconColor.value = AppColors.kSecondaryColor;
-                } else if (!_focusNode.hasFocus && _controller.text.isEmpty) {
+                } else if (!_focusNode.hasFocus && widget.controller.text.isEmpty) {
                   _iconColor.value = AppColors.kDarkGrey;
                 } else {
                   _iconColor.value = AppColors.kGreen;
@@ -42,6 +50,8 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
               },
             );
           },
+          validator: widget.validator,
+          onSaved: widget.onSaved,
           style: TextStyles.textStyle15,
           obscureText: !isVisible,
           keyboardType: TextInputType.visiblePassword,
