@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
 import 'package:llegar/core/widgets/loading_colored_button.dart';
-import 'package:llegar/features/auth/presentation/view/sign_up_verification_code_view.dart';
+import 'package:llegar/features/auth/presentation/view/verify_sign_up_view.dart';
 import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 class SignUpBlocConsumer extends StatelessWidget {
@@ -19,7 +19,7 @@ class SignUpBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
-          Navigator.pushNamed(context, SignUpVerificationCodeView.id);
+          Navigator.pushNamed(context, VerifySignUpView.id);
         } else if (state is SignUpFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             errorSnackBar(state.errMessage),

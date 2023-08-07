@@ -5,11 +5,11 @@ import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/features/auth/presentation/view/successful_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/app_bars/auth_app_bar.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/rows/remember_me_row.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/sections/new_password_view_sections/create_password_section.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/sections/reset_password_view_sections/create_password_section.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/texts/page_title_text.dart';
 
-class NewPasswordViewBody extends StatelessWidget {
-  const NewPasswordViewBody({super.key});
+class ResetPasswordViewBody extends StatelessWidget {
+  const ResetPasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {

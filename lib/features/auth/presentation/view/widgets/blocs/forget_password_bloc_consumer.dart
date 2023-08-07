@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
 import 'package:llegar/core/widgets/loading_colored_button.dart';
-import 'package:llegar/features/auth/presentation/view/forget_password_verification_code_view.dart';
+import 'package:llegar/features/auth/presentation/view/verify_password_view.dart';
 import 'package:llegar/features/auth/presentation/view_model/forget_password_cubit/forget_password_cubit.dart';
 
 class ForgetPasswordBlocConsumer extends StatelessWidget {
@@ -21,7 +21,7 @@ class ForgetPasswordBlocConsumer extends StatelessWidget {
         if (state is ForgetPasswordSuccess) {
           Navigator.pushNamed(
             context,
-            ForgetPasswordVerificationCodeView.id,
+            VerifyPasswordView.id,
           );
         } else if (state is ForgetPasswordFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
