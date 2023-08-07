@@ -36,4 +36,31 @@ class ResetPasswordService implements ResetPasswordRepo {
       );
     }
   }
+
+  @override
+  Future<Either<ServerFailure, String>> verifyPassword({
+    required String resetCode,
+  }) async {
+    try {
+      Map<String, dynamic> data = await _dioHelper.postRequest(
+        body: {
+          'resetCode': resetCode,
+        },
+        endPoint: 'users/verfiyPassword',
+      );
+      return right(data['token']);
+    } on DioException catch (error) {
+      return left(
+        ServerFailure.fromDioException(
+          dioException: error,
+        ),
+      );
+    } catch (error) {
+      return left(
+        ServerFailure(
+          errMessage: error.toString(),
+        ),
+      );
+    }
+  }
 }

@@ -5,4 +5,8 @@ abstract class ResetPasswordRepo {
   Future<Either<ServerFailure, void>> forgetPassword({
     required String email,
   });
+
+  Future<Either<ServerFailure, String>> verifyPassword({
+    required String resetCode,
+  });
 }
