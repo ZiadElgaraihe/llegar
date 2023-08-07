@@ -34,4 +34,28 @@ class DioHelper {
 
     return response.data;
   }
+
+  Future<Map<String, dynamic>> patchRequest({
+    required Map<String, dynamic> body,
+    required String endPoint,
+    String? token,
+  }) async {
+    Map<String, dynamic> headers = {
+      'Content-Type': 'application/json',
+    };
+
+    if (token != null) {
+      headers.addAll({'Authorization': 'Bearer $token'});
+    }
+
+    Response response = await _dio.patch(
+      endPoint,
+      data: body,
+      options: Options(
+        headers: headers,
+      ),
+    );
+
+    return response.data;
+  }
 }
