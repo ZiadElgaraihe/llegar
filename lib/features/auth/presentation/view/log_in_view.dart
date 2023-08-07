@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
+import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/core/utils/service_locator.dart';
 import 'package:llegar/features/auth/data/services/log_in_service.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/log_in_view_body.dart';
@@ -18,7 +18,7 @@ class LogInView extends StatelessWidget {
       child: BlocProvider<LogInCubit>(
         create: (context) => LogInCubit(
           logInService: getIt.get<LogInService>(),
-          userModelCubit: getIt.get<UserModelCubit>(),
+          appCubit: getIt.get<AppCubit>(),
         ),
         child: const Scaffold(
           body: LogInViewBody(),

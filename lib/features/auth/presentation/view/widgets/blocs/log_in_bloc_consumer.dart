@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
 import 'package:llegar/core/widgets/loading_colored_button.dart';
@@ -10,7 +9,7 @@ class LogInBlocConsumer extends StatelessWidget {
   const LogInBlocConsumer({
     super.key,
     required GlobalKey<FormState> formKey,
-  })  : _formKey = formKey;
+  }) : _formKey = formKey;
 
   final GlobalKey<FormState> _formKey;
 
@@ -19,7 +18,6 @@ class LogInBlocConsumer extends StatelessWidget {
     return BlocConsumer<LogInCubit, LogInState>(
       listener: (context, state) {
         if (state is LogInSuccess) {
-          print(context.read<UserModelCubit>().userModel?.email);
         } else if (state is LogInFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             errorSnackBar(state.errMessage),

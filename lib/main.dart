@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
+import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_routes.dart';
 import 'package:llegar/core/utils/app_themes.dart';
@@ -33,8 +33,8 @@ class Llegar extends StatelessWidget {
     );
     return MultiBlocProvider(
       providers: [
-        BlocProvider<UserModelCubit>(
-          create: (context) => getIt.get<UserModelCubit>(),
+        BlocProvider<AppCubit>(
+          create: (context) => getIt.get<AppCubit>(),
         ),
         BlocProvider<SignUpCubit>(
           create: (context) => getIt.get<SignUpCubit>(),

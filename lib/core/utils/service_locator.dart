@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
+import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/core/utils/helpers/dio_helper.dart';
 import 'package:llegar/features/auth/data/services/log_in_service.dart';
 import 'package:llegar/features/auth/data/services/reset_password_service.dart';
@@ -35,10 +35,11 @@ void setupServiceLocator() {
   getIt.registerSingleton<SignUpCubit>(
     SignUpCubit(
       signUpService: getIt.get<SignUpService>(),
+      appCubit: getIt.get<AppCubit>(),
     ),
   );
-  //user model cubit
-  getIt.registerSingleton<UserModelCubit>(
-    UserModelCubit(),
+  //app cubit
+  getIt.registerSingleton<AppCubit>(
+    AppCubit(),
   );
 }

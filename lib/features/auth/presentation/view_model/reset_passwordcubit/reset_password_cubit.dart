@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/core/errors/server_failure.dart';
+import 'package:llegar/features/auth/data/models/user_model.dart';
 import 'package:llegar/features/auth/data/services/reset_password_service.dart';
 
-part 'verify_password_state.dart';
+part 'reset_password_state.dart';
 
-class VerifyPasswordCubit extends Cubit<VerifyPasswordState> {
-  VerifyPasswordCubit({
+class ResetPasswordCubit extends Cubit<ResetPasswordState> {
+  ResetPasswordCubit({
     required ResetPasswordService resetPasswordService,
     required AppCubit appCubit,
-  }) : super(VerifyPasswordInitial()) {
+  }) : super(ResetPasswordInitial()) {
     _resetPasswordService = resetPasswordService;
     _appCubit = appCubit;
   }
@@ -19,23 +20,25 @@ class VerifyPasswordCubit extends Cubit<VerifyPasswordState> {
   late ResetPasswordService _resetPasswordService;
   late AppCubit _appCubit;
 
-  String? resetCode;
+  String? password;
 
-  Future<void> verifPassword() async {
-    emit(VerifyPasswordLoading());
-
-    Either<ServerFailure, String> result =
-        await _resetPasswordService.verifyPassword(resetCode: resetCode!);
+  Future<void> resetPassword() async {
+    emit(ResetPasswordLoading());
+    Either<ServerFailure, UserModel> result =
+        await _resetPasswordService.resetPassword(
+      newPassword: password!,
+      token: _appCubit.token!,
+    );
 
     result.fold(
       (serverFailure) {
         emit(
-          VerifyPasswordFailure(errMessage: serverFailure.errMessage),
+          ResetPasswordFailure(errMessage: serverFailure.errMessage),
         );
       },
-      (token) {
-        _appCubit.token = token;
-        emit(VerifyPasswordSuccess());
+      (userModel) {
+        _appCubit.userModel = userModel;
+        emit(ResetPasswordSuccess());
       },
     );
   }

@@ -2,25 +2,23 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/errors/server_failure.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
-import 'package:llegar/core/utils/service_locator.dart';
+import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/features/auth/data/models/user_model.dart';
 import 'package:llegar/features/auth/data/services/sign_up_service.dart';
-import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 part 'verify_sign_up_state.dart';
 
 class VerifySignUpCubit extends Cubit<VerifySignUpState> {
   VerifySignUpCubit({
     required SignUpService signUpService,
-    required UserModelCubit userModelCubit,
+    required AppCubit appCubit,
   }) : super(VerifySignUpInitial()) {
     _signUpService = signUpService;
-    _userModelCubit = userModelCubit;
+    _appCubit = appCubit;
   }
 
   late SignUpService _signUpService;
-  late UserModelCubit _userModelCubit;
+  late AppCubit _appCubit;
 
   String? resetCode;
 
@@ -28,7 +26,7 @@ class VerifySignUpCubit extends Cubit<VerifySignUpState> {
     emit(VerifySignUpLoading());
     Either<ServerFailure, UserModel> result = await _signUpService.verifySignUp(
       resetCode: resetCode!,
-      token: getIt.get<SignUpCubit>().token!,
+      token: _appCubit.token!,
     );
 
     result.fold(
@@ -40,7 +38,7 @@ class VerifySignUpCubit extends Cubit<VerifySignUpState> {
       },
       //success
       (userModel) {
-        _userModelCubit.userModel = userModel;
+        _appCubit.userModel = userModel;
         emit(VerifySignUpSuccess());
       },
     );

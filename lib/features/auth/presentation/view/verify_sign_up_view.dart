@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/user_model_cubit/user_model_cubit.dart';
+import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/core/utils/service_locator.dart';
 import 'package:llegar/features/auth/data/services/sign_up_service.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/verify_sign_up_view_body.dart';
@@ -18,7 +18,7 @@ class VerifySignUpView extends StatelessWidget {
       child: BlocProvider<VerifySignUpCubit>(
         create: (context) => VerifySignUpCubit(
           signUpService: getIt.get<SignUpService>(),
-          userModelCubit: getIt.get<UserModelCubit>(),
+          appCubit: getIt.get<AppCubit>(),
         ),
         child: const Scaffold(
           body: VerifySignUpViewBody(),

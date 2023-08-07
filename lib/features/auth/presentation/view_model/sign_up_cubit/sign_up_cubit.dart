@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:llegar/core/app_cubit/app_cubit.dart';
 import 'package:llegar/core/errors/server_failure.dart';
 import 'package:llegar/features/auth/data/services/sign_up_service.dart';
 
@@ -9,11 +10,14 @@ part 'sign_up_state.dart';
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit({
     required SignUpService signUpService,
+    required AppCubit appCubit,
   }) : super(SignUpInitial()) {
     _signUpService = signUpService;
+    _appCubit = appCubit;
   }
 
   late SignUpService _signUpService;
+  late AppCubit _appCubit;
 
   String? email;
   String? password;
@@ -23,8 +27,6 @@ class SignUpCubit extends Cubit<SignUpState> {
   String? gender;
   String? city;
   String? phoneNumber;
-
-  String? token;
 
   Future<void> signUp() async {
     emit(SignUpLoading());
@@ -48,7 +50,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       },
       //success
       (token) {
-        this.token = token;
+        _appCubit.token = token;
         emit(SignUpSuccess());
       },
     );
