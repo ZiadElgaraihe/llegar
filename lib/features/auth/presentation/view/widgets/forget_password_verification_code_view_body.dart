@@ -33,6 +33,7 @@ class ForgetPasswordVerificationCodeViewBody extends StatelessWidget {
               Navigator.pushNamed(context, NewPasswordView.id);
             },
           ),
+          SizedBox(height: 50.h),
         ],
       ),
     );

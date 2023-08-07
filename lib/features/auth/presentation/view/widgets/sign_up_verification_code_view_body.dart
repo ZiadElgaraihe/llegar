@@ -43,6 +43,7 @@ class _SignUpVerificationCodeViewBodyState
           VerifySignUpBlocConsumer(
             resetCodeControllers: _resetCodeControllers,
           ),
+          SizedBox(height: 50.h),
         ],
       ),
     );

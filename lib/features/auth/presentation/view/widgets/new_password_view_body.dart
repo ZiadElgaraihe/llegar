@@ -39,6 +39,7 @@ class NewPasswordViewBody extends StatelessWidget {
                   arguments: 'Reset Password Done');
             },
           ),
+          SizedBox(height: 50.h),
         ],
       ),
     );

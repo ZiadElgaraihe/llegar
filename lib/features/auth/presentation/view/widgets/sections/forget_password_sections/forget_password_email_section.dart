@@ -25,7 +25,8 @@ class ForgetPasswordEmailSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 16.h),
-        const ForgetPasswordViewForm()
+        const ForgetPasswordViewForm(),
+        SizedBox(height: 50.h),
       ],
     );
   }

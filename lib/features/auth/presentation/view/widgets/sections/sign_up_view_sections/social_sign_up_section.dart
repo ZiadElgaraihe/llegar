@@ -25,6 +25,7 @@ class SocialSignUpSection extends StatelessWidget {
             Navigator.pushReplacementNamed(context, LogInView.id);
           },
         ),
+        SizedBox(height: 50.h),
       ],
     );
   }
