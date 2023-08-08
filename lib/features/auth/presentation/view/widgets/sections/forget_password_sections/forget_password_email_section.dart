@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/blocs/forget_password_bloc_consumer.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/forms/forget_password_view_form.dart';
 
-class ForgetPasswordEmailSection extends StatelessWidget {
+class ForgetPasswordEmailSection extends StatefulWidget {
   const ForgetPasswordEmailSection({
     super.key,
   });
 
+  @override
+  State<ForgetPasswordEmailSection> createState() => _ForgetPasswordEmailSectionState();
+}
+
+class _ForgetPasswordEmailSectionState extends State<ForgetPasswordEmailSection> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +32,9 @@ class ForgetPasswordEmailSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 16.h),
-        const ForgetPasswordViewForm(),
+        ForgetPasswordViewForm(formKey: _formKey),
+        SizedBox(height: 438.h),
+        ForgetPasswordBlocConsumer(formKey: _formKey),
         SizedBox(height: 50.h),
       ],
     );

@@ -4,8 +4,8 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/phone_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
-class PhoneNumberSection extends StatelessWidget {
-  const PhoneNumberSection({
+class PhoneNumberForm extends StatelessWidget {
+  const PhoneNumberForm({
     super.key,
     required this.formKey,
   });

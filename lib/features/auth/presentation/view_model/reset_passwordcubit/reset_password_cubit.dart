@@ -31,11 +31,13 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
     );
 
     result.fold(
+      //error
       (serverFailure) {
         emit(
           ResetPasswordFailure(errMessage: serverFailure.errMessage),
         );
       },
+      //success
       (userModel) {
         _appCubit.userModel = userModel;
         emit(ResetPasswordSuccess());

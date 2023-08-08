@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/app_bars/auth_app_bar.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/sections/personal_data_sign_up_view_sections/personal_data_section.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/sections/user_identification_view_sections/user_identification_section.dart';
 
-class PersonalDataSignUpViewBody extends StatelessWidget {
-  const PersonalDataSignUpViewBody({super.key});
+class UserIdentificationSignUpViewBody extends StatelessWidget {
+  const UserIdentificationSignUpViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class PersonalDataSignUpViewBody extends StatelessWidget {
       child: Column(
         children: [
           AuthenticationAppBar(),
-          PersonalDataSection(),
+          UserIdentificationSection(),
         ],
       ),
     );

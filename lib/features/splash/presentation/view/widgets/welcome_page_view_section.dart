@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/core/utils/constants.dart';
 import 'package:llegar/features/auth/presentation/view/social_log_in_view.dart';
 import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/features/splash/presentation/view/widgets/listenable_smooth_indicator.dart';
 import 'package:llegar/features/splash/presentation/view/widgets/welcome_page_view_builder.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomePageViewSection extends StatefulWidget {
   const WelcomePageViewSection({super.key});
@@ -29,19 +27,7 @@ class _WelcomePageViewSectionState extends State<WelcomePageViewSection> {
           activeIndex: _activeIndex,
         ),
         SizedBox(height: 24.h),
-        ValueListenableBuilder(
-          valueListenable: _activeIndex,
-          builder: (context, value, child) => AnimatedSmoothIndicator(
-            activeIndex: value,
-            count: welcomePageViewItems.length,
-            effect: ExpandingDotsEffect(
-              activeDotColor: AppColors.kPrimaryColor,
-              dotColor: const Color(0xFFE0E0E0),
-              dotWidth: 8.w,
-              dotHeight: 8.h,
-            ),
-          ),
-        ),
+        ListenableSmoothIndicator(activeIndex: _activeIndex),
         SizedBox(height: 24.h),
         ValueListenableBuilder(
           valueListenable: _isLastView,

@@ -4,8 +4,8 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
-class WelcomePageViewItem extends StatelessWidget {
-  const WelcomePageViewItem({
+class WelcomePageViewBuilderItem extends StatelessWidget {
+  const WelcomePageViewBuilderItem({
     super.key,
     required this.image,
     required this.title,

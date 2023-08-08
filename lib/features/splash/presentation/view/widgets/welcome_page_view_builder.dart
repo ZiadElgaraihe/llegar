@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/constants.dart';
-import 'package:llegar/features/splash/presentation/view/widgets/welcome_page_view_item.dart';
+import 'package:llegar/features/splash/presentation/view/widgets/welcome_page_view_builder_item.dart';
 
 class WelcomePageViewBuilder extends StatelessWidget {
   const WelcomePageViewBuilder({
@@ -26,15 +26,14 @@ class WelcomePageViewBuilder extends StatelessWidget {
         onPageChanged: (value) {
           if (value == welcomePageViewItems.length - 1) {
             isLastView.value = true;
-          } else if (activeIndex.value ==
-                  welcomePageViewItems.length - 1 &&
+          } else if (activeIndex.value == welcomePageViewItems.length - 1 &&
               value == welcomePageViewItems.length - 2) {
             isLastView.value = false;
           }
           activeIndex.value = value;
         },
         itemCount: welcomePageViewItems.length,
-        itemBuilder: (context, index) => WelcomePageViewItem(
+        itemBuilder: (context, index) => WelcomePageViewBuilderItem(
             image: welcomePageViewItems[index]['img']!,
             title: welcomePageViewItems[index]['title']!,
             content: welcomePageViewItems[index]['content']!),

@@ -23,16 +23,17 @@ class VerifyPasswordCubit extends Cubit<VerifyPasswordState> {
 
   Future<void> verifPassword() async {
     emit(VerifyPasswordLoading());
-
     Either<ServerFailure, String> result =
         await _resetPasswordService.verifyPassword(resetCode: resetCode!);
 
     result.fold(
+      //error
       (serverFailure) {
         emit(
           VerifyPasswordFailure(errMessage: serverFailure.errMessage),
         );
       },
+      //success
       (token) {
         _appCubit.token = token;
         emit(VerifyPasswordSuccess());
