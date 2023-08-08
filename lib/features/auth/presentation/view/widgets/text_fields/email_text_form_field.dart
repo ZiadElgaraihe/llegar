@@ -4,8 +4,7 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/change_text_field_icon_color.dart';
-import 'package:llegar/features/auth/functions/validators/email_validator.dart';
+import 'package:llegar/features/auth/validators/validators.dart';
 
 class EmailTextFormField extends StatefulWidget {
   const EmailTextFormField({super.key, required this.onSaved});
@@ -31,13 +30,13 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
         controller: _controller,
         keyboardType: TextInputType.emailAddress,
         onTap: () {
-          changeTextFieldIconColor(
+          changeIconColor(
             focusNode: _focusNode,
             controller: _controller,
             iconColor: _iconColor,
           );
         },
-        validator: emailValidator,
+        validator: Validators.emailValidator,
         onSaved: widget.onSaved,
         style: TextStyles.textStyle15,
         decoration: InputDecoration(
@@ -82,5 +81,25 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
         ),
       ),
     );
+  }
+
+  //change icon color depend on the state of the field
+  //1- if unfocus and empty (kDarkGrey)
+  //2- if unfocus and not empty (kSecondaryColor)
+  //3- if focus (kGreen)
+  void changeIconColor({
+    required FocusNode focusNode,
+    required TextEditingController controller,
+    required ValueNotifier<Color> iconColor,
+  }) {
+    focusNode.addListener(() {
+      if (!focusNode.hasFocus && controller.text.isNotEmpty) {
+        iconColor.value = AppColors.kSecondaryColor;
+      } else if (!focusNode.hasFocus && controller.text.isEmpty) {
+        iconColor.value = AppColors.kDarkGrey;
+      } else {
+        iconColor.value = AppColors.kGreen;
+      }
+    });
   }
 }

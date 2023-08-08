@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/features/auth/functions/validators/email_validator.dart';
+import 'package:llegar/features/auth/validators/validators.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/data_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view_model/forget_password_cubit/forget_password_cubit.dart';
 
@@ -20,7 +20,7 @@ class ForgetPasswordViewForm extends StatelessWidget {
         hint: 'Email',
         keyboardType: TextInputType.emailAddress,
         validator: (value, hint) {
-          return emailValidator(value);
+          return Validators.emailValidator(value);
         },
         onSaved: (newValue) {
           context.read<ForgetPasswordCubit>().email = newValue;

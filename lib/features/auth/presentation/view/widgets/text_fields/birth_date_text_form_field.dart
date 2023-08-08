@@ -5,7 +5,6 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/validators/birth_date_validator.dart';
 
 class BirthDateTextFormField extends StatefulWidget {
   const BirthDateTextFormField({super.key, required this.onSaved});
@@ -78,4 +77,11 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
       ),
     );
   }
+  
+  String? birthDateValidator(value) {
+  if (value == null || value.isEmpty) {
+    return 'This field is required';
+  }
+  return null;
+}
 }

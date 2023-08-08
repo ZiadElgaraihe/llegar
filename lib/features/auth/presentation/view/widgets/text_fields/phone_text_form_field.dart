@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/validators/phone_number_validator.dart';
 
 class PhoneTextFormField extends StatelessWidget {
   const PhoneTextFormField({
-    super.key, required this.onSaved,
+    super.key,
+    required this.onSaved,
   });
 
   final void Function(String? newValue) onSaved;
@@ -53,5 +53,14 @@ class PhoneTextFormField extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String? phoneNumberValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone number is required';
+    } else if (!RegExp(r'^\+20(10|11|12|15)[0-9]{8}$').hasMatch('+20$value')) {
+      return 'Invalid phone number';
+    }
+    return null;
   }
 }

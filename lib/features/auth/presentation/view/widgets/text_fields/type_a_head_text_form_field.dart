@@ -6,7 +6,6 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/validators/type_a_head_validator.dart';
 
 class TypeAHeadTextFormField extends StatefulWidget {
   const TypeAHeadTextFormField({
@@ -106,4 +105,16 @@ class _TypeAHeadTextFormFieldState extends State<TypeAHeadTextFormField> {
       ),
     );
   }
+
+  String? typeAHeadValidator(
+  String? value,
+  List<String> suggestionList,
+) {
+  if (value == null || value.isEmpty) {
+    return 'This field is required';
+  } else if (!suggestionList.contains(value)) {
+    return 'Invalid value';
+  }
+  return null;
+}
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/auth/functions/validators/password_validator.dart';
+import 'package:llegar/features/auth/validators/validators.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/new_password_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view_model/reset_passwordcubit/reset_password_cubit.dart';
 
@@ -40,7 +40,7 @@ class _ResetPasswordViewFormState extends State<ResetPasswordViewForm> {
           NewPasswordTextFormField(
             hint: 'New Password',
             controller: _newPassword,
-            validator: passwordValidator,
+            validator: Validators.passwordValidator,
             onSaved: (newValue) {
               context.read<ResetPasswordCubit>().password = newValue;
             },
