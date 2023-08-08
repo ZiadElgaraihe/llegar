@@ -6,7 +6,7 @@ class DioHelper {
   DioHelper() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: 'http://192.168.1.3:8000/api/v1/',
+        baseUrl: 'http://192.168.1.4:8000/api/v1/',
       ),
     );
   }

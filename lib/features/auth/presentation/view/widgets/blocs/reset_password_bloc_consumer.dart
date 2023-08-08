@@ -19,7 +19,8 @@ class ResetPasswordBlocConsumer extends StatelessWidget {
     return BlocConsumer<ResetPasswordCubit, ResetPasswordState>(
       listener: (context, state) {
         if (state is ResetPasswordSuccess) {
-          Navigator.pushNamed(context, SuccessfulView.id,
+          Navigator.pushNamedAndRemoveUntil(
+              context, SuccessfulView.id, (route) => false,
               arguments: 'Reset Password Done');
         } else if (state is ResetPasswordFailure) {
           ScaffoldMessenger.of(context).showSnackBar(

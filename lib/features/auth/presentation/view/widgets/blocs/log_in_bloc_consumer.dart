@@ -4,6 +4,7 @@ import 'package:llegar/core/widgets/colored_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
 import 'package:llegar/core/widgets/loading_colored_button.dart';
 import 'package:llegar/features/auth/presentation/view_model/log_in_cubit/log_in_cubit.dart';
+import 'package:llegar/features/home/presentation/view/home_view.dart';
 
 class LogInBlocConsumer extends StatelessWidget {
   const LogInBlocConsumer({
@@ -18,6 +19,11 @@ class LogInBlocConsumer extends StatelessWidget {
     return BlocConsumer<LogInCubit, LogInState>(
       listener: (context, state) {
         if (state is LogInSuccess) {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomeView.id,
+            (route) => false,
+          );
         } else if (state is LogInFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             errorSnackBar(state.errMessage),
