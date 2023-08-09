@@ -21,6 +21,14 @@ class ResetPasswordViewForm extends StatefulWidget {
 class _ResetPasswordViewFormState extends State<ResetPasswordViewForm> {
   final TextEditingController _newPassword = TextEditingController();
   final TextEditingController _confirmPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    _newPassword.dispose();
+    _confirmPassword.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(

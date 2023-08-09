@@ -4,6 +4,12 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 
 abstract class TextStyles {
+  static TextStyle textStyle10 = TextStyle(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.kSecondaryColor,
+  );
+  
   static TextStyle textStyle13 = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeight.w500,
@@ -43,6 +49,11 @@ abstract class TextStyles {
 
   static TextStyle textStyle32 = TextStyle(
     fontSize: 32.sp,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle textStyle36 = TextStyle(
+    fontSize: 36.sp,
     fontWeight: FontWeight.w700,
   );
 

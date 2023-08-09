@@ -8,8 +8,11 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomeViewBody(),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
+      child: const Scaffold(
+        body: HomeViewBody(),
+      ),
     );
   }
 }

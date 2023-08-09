@@ -84,8 +84,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-  # flutter_assets:
-  #   assets_path: assets/icons/
-  #   output_path: lib/core/utils/
-  #   filename: app_icons.dart
-  #   field_prefix: null
+# flutter_assets:
+#   assets_path: assets/icons/
+#   output_path: lib/core/utils/
+#   filename: app_icons.dart
+#   field_prefix: null

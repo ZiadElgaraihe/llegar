@@ -16,6 +16,15 @@ class _VerifyPasswordSectionState extends State<VerifyPasswordSection> {
     4,
     (index) => TextEditingController(),
   );
+
+  @override
+  void dispose() {
+    for (var controller in _resetCodeControllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(

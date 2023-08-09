@@ -15,7 +15,7 @@ import 'package:llegar/features/splash/presentation/view/welcome_view.dart';
 
 abstract class AppRoutes {
   static Map<String, Widget Function(BuildContext context)> routes = {
-    '/': (context) => const SplashView(),
+    '/SplashView': (context) => const SplashView(),
     WelcomeView.id: (context) => const WelcomeView(),
     SocialLogInView.id: (context) => const SocialLogInView(),
     SignUpView.id: (context) => const SignUpView(),

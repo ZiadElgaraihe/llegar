@@ -17,6 +17,13 @@ class BirthDateTextFormField extends StatefulWidget {
 
 class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
   final TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -77,11 +84,11 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
       ),
     );
   }
-  
+
   String? birthDateValidator(value) {
-  if (value == null || value.isEmpty) {
-    return 'This field is required';
+    if (value == null || value.isEmpty) {
+      return 'This field is required';
+    }
+    return null;
   }
-  return null;
-}
 }

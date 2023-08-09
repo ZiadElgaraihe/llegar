@@ -4,6 +4,12 @@ abstract class AppImages {
   static const String imagesBackgroundPhotoPng =
       "assets/images/background_photo.png";
 
+  static const String imagesBMWCarPng = 'assets/images/bmw_car.png';
+
+  static const String imagesCar = "assets/images/car.svg";
+
+  static const String imagesClothes = "assets/images/clothes.svg";
+
   static const String imagesContinueWithApple =
       "assets/images/continue_with_apple.svg";
 
@@ -12,6 +18,8 @@ abstract class AppImages {
 
   static const String imagesContinueWithGoogle =
       "assets/images/continue_with_google.svg";
+
+  static const String imagesElectronic = "assets/images/electronic.svg";
 
   static const String imagesEllipse10 = "assets/images/ellipse10.svg";
 
@@ -25,15 +33,15 @@ abstract class AppImages {
 
   static const String imagesGoogleLogo = "assets/images/google_logo.svg";
 
+  static const String imagesHouse = "assets/images/house.svg";
+
   static const String imagesIdBackgroundPng = "assets/images/id_background.png";
 
-  static const String imagesIdPicture = "assets/images/id_picture.svg";
+  static const String imagesJeepCarPng = "assets/images/jeep_car.png";
 
   static const String imagesKey = "assets/images/key.svg";
 
   static const String imagesLetsYouIn = "assets/images/let's_you_in.svg";
-
-  static const String imagesLivePhoto = "assets/images/live_photo.svg";
 
   static const String imagesLockKey = "assets/images/lock_key.svg";
 
@@ -44,6 +52,11 @@ abstract class AppImages {
   static const String imagesMakeDeal = "assets/images/make_deal.svg";
 
   static const String imagesOkAmico = "assets/images/ok_amico.svg";
+
+  static const String imagesParty = "assets/images/party.svg";
+
+  static const String imagesPlaygroundArea =
+      "assets/images/playground_area.svg";
 
   static const String imagesSecureApp = "assets/images/secure_app.svg";
 

@@ -22,6 +22,12 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
       ValueNotifier<Color>(AppColors.kDarkGrey);
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 398.w,

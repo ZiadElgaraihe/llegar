@@ -27,6 +27,13 @@ class TypeAHeadTextFormField extends StatefulWidget {
 
 class _TypeAHeadTextFormFieldState extends State<TypeAHeadTextFormField> {
   final TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -107,14 +114,14 @@ class _TypeAHeadTextFormFieldState extends State<TypeAHeadTextFormField> {
   }
 
   String? typeAHeadValidator(
-  String? value,
-  List<String> suggestionList,
-) {
-  if (value == null || value.isEmpty) {
-    return 'This field is required';
-  } else if (!suggestionList.contains(value)) {
-    return 'Invalid value';
+    String? value,
+    List<String> suggestionList,
+  ) {
+    if (value == null || value.isEmpty) {
+      return 'This field is required';
+    } else if (!suggestionList.contains(value)) {
+      return 'Invalid value';
+    }
+    return null;
   }
-  return null;
-}
 }

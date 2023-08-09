@@ -23,7 +23,6 @@ class NewPasswordTextFormField extends StatefulWidget {
 
 class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
   final FocusNode _focusNode = FocusNode();
-  // final TextEditingController _controller = TextEditingController();
   final ValueNotifier<bool> _isVisible = ValueNotifier<bool>(false);
   final ValueNotifier<Color> _iconColor =
       ValueNotifier<Color>(AppColors.kDarkGrey);

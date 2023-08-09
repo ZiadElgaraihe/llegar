@@ -8,6 +8,7 @@ import 'package:llegar/core/utils/app_themes.dart';
 import 'package:llegar/core/utils/service_locator.dart';
 import 'package:llegar/features/auth/data/services/sign_up_service.dart';
 import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
+import 'package:llegar/features/home/presentation/view/home_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,6 +50,7 @@ class Llegar extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppThemes.lightMode,
         routes: AppRoutes.routes,
+        initialRoute: HomeView.id,
       ),
     );
   }
