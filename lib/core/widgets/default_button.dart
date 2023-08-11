@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
+import 'package:llegar/core/utils/text_styles.dart';
 
-class LoadingColoredButton extends StatelessWidget {
-  const LoadingColoredButton({super.key});
+class DefaultButton extends StatelessWidget {
+  const DefaultButton({
+    super.key,
+    required this.btnTitle,
+    required this.onPressed,
+  });
+
+  final String btnTitle;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: null,
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor:
             const MaterialStatePropertyAll(AppColors.kPrimaryColor),
@@ -22,11 +29,9 @@ class LoadingColoredButton extends StatelessWidget {
           Size(380.w, 58.h),
         ),
       ),
-      child: Center(
-        child: SpinKitThreeBounce(
-          color: Colors.white,
-          size: 30.w,
-        ),
+      child: Text(
+        btnTitle,
+        style: TextStyles.textStyle20,
       ),
     );
   }

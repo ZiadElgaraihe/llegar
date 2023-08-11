@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/auth/presentation/view/social_log_in_view.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/features/splash/presentation/view/widgets/listenable_smooth_indicator.dart';
 import 'package:llegar/features/splash/presentation/view/widgets/welcome_page_view_builder.dart';
 
@@ -31,7 +31,7 @@ class _WelcomePageViewSectionState extends State<WelcomePageViewSection> {
         SizedBox(height: 24.h),
         ValueListenableBuilder(
           valueListenable: _isLastView,
-          builder: (context, value, child) => ColoredButton(
+          builder: (context, value, child) => DefaultButton(
             btnTitle: value ? 'Get Started' : 'Next',
             onPressed: () {
               if (value) {

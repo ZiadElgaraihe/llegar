@@ -4,7 +4,7 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/features/home/presentation/view/home_view.dart';
 
 class SuccessfulViewBody extends StatelessWidget {
@@ -38,7 +38,7 @@ class SuccessfulViewBody extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24.h),
-          ColoredButton(
+          DefaultButton(
             btnTitle: 'Get Started',
             onPressed: () {
               Navigator.pushReplacementNamed(context, HomeView.id);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
-import 'package:llegar/core/widgets/loading_colored_button.dart';
+import 'package:llegar/core/widgets/loading_button.dart';
 import 'package:llegar/features/auth/presentation/view_model/log_in_cubit/log_in_cubit.dart';
 import 'package:llegar/features/home/presentation/view/home_view.dart';
 
@@ -32,9 +32,9 @@ class LogInBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is LogInLoading) {
-          return const LoadingColoredButton();
+          return const LoadingButton();
         } else {
-          return ColoredButton(
+          return DefaultButton(
             btnTitle: 'Sign in',
             onPressed: () async {
               if (_formKey.currentState!.validate()) {

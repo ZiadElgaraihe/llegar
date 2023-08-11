@@ -4,6 +4,7 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/search/presentation/view/widgets/containers/filter_bottom_sheet_container.dart';
 
 class SearchTextField extends StatefulWidget {
   const SearchTextField({super.key});
@@ -21,7 +22,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
   @override
   void initState() {
     super.initState();
-    handleFocusChangeAndNavigation();
+    // handleFocusChangeAndNavigation();
   }
 
   @override
@@ -49,7 +50,9 @@ class _SearchTextFieldState extends State<SearchTextField> {
                 child: Material(
                   color: Colors.transparent,
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showSearchFilter(context);
+                    },
                     padding: EdgeInsets.zero,
                     splashRadius: 15.w,
                     icon: SvgPicture.asset(
@@ -95,6 +98,17 @@ class _SearchTextFieldState extends State<SearchTextField> {
           ),
         ),
       ),
+    );
+  }
+
+  void showSearchFilter(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40.w),
+      ),
+      builder: (context) => const FilterBottomSheetContainer(),
     );
   }
 

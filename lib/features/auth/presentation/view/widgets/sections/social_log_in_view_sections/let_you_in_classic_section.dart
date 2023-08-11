@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/features/auth/presentation/view/log_in_view.dart';
 import 'package:llegar/features/auth/presentation/view/sign_up_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/rows/auth_toggle_row.dart';
@@ -13,7 +13,7 @@ class LetYouInClassicSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 22.h),
-        ColoredButton(
+        DefaultButton(
           btnTitle: 'Sign in with password',
           onPressed: () {
             Navigator.pushNamed(context, LogInView.id);

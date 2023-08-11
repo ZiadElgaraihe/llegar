@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/features/auth/presentation/view/user_identification_sign_up_view.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/forms/personal_data_sign_up_view_form.dart';
 
@@ -18,7 +18,7 @@ class _PersonalDataSectionState extends State<PersonalDataSection> {
     return Column(
       children: [
         PersonalDataSignUpViewForm(formKey: _formKey),
-        ColoredButton(
+        DefaultButton(
           btnTitle: 'Continue',
           onPressed: () {
             if (_formKey.currentState!.validate()) {

@@ -2,34 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/widgets/selectable_category_tile.dart';
 
-class TopDealsCategoryListView extends StatefulWidget {
-  const TopDealsCategoryListView({super.key});
+class ItemTypeListView extends StatefulWidget {
+  const ItemTypeListView({super.key});
 
   @override
-  State<TopDealsCategoryListView> createState() =>
-      _TopDealsCategoryListViewState();
+  State<ItemTypeListView> createState() => _ItemTypeListViewState();
 }
 
-class _TopDealsCategoryListViewState extends State<TopDealsCategoryListView> {
-  final ValueNotifier<String> _selectedCategory = ValueNotifier<String>('All');
+class _ItemTypeListViewState extends State<ItemTypeListView> {
+  final ValueNotifier<String> _selectedType = ValueNotifier<String>('All');
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 42.h,
       child: ListView.separated(
-        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemCount: _categories.length,
+        physics: const BouncingScrollPhysics(),
+        itemCount: _types.length,
         itemBuilder: (context, index) => SelectableCategoryTile(
-          title: _categories[index],
-          selectedCategory: _selectedCategory,
+          title: _types[index],
+          selectedCategory: _selectedType,
         ),
         separatorBuilder: (context, index) => SizedBox(width: 8.w),
       ),
     );
   }
 
-  final List<String> _categories = <String>[
+  final List<String> _types = <String>[
     'All',
     'Property',
     'Transportation',

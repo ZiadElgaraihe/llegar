@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
-import 'package:llegar/core/widgets/loading_colored_button.dart';
+import 'package:llegar/core/widgets/loading_button.dart';
 import 'package:llegar/features/auth/presentation/view/verify_password_view.dart';
 import 'package:llegar/features/auth/presentation/view_model/forget_password_cubit/forget_password_cubit.dart';
 
@@ -31,9 +31,9 @@ class ForgetPasswordBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is ForgetPasswordLoading) {
-          return const LoadingColoredButton();
+          return const LoadingButton();
         } else {
-          return ColoredButton(
+          return DefaultButton(
             btnTitle: 'Continue',
             onPressed: () {
               if (_formKey.currentState!.validate()) {

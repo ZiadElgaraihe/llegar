@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:llegar/core/widgets/colored_button.dart';
+import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/core/widgets/error_snack_bar.dart';
-import 'package:llegar/core/widgets/loading_colored_button.dart';
+import 'package:llegar/core/widgets/loading_button.dart';
 import 'package:llegar/features/auth/presentation/view/successful_view.dart';
 import 'package:llegar/features/auth/presentation/view_model/verify_sign_up_cubit/verify_sign_up_cubit.dart';
 
@@ -30,9 +30,9 @@ class VerifySignUpBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is VerifySignUpLoading) {
-          return const LoadingColoredButton();
+          return const LoadingButton();
         } else {
-          return ColoredButton(
+          return DefaultButton(
             btnTitle: 'Continue',
             onPressed: () {
               String resetCode = '';
