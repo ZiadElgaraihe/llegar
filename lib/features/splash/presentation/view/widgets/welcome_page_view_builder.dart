@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/core/utils/constants.dart';
 import 'package:llegar/features/splash/presentation/view/widgets/welcome_page_view_builder_item.dart';
 
 class WelcomePageViewBuilder extends StatelessWidget {
@@ -8,12 +7,13 @@ class WelcomePageViewBuilder extends StatelessWidget {
     super.key,
     required this.pageController,
     required this.isLastView,
-    required this.activeIndex,
+    required this.activeIndex, required this.welcomePageViewItems,
   });
 
   final ValueNotifier<int> activeIndex;
   final ValueNotifier<bool> isLastView;
   final PageController pageController;
+  final List<Map<String, String>> welcomePageViewItems;
 
   @override
   Widget build(BuildContext context) {

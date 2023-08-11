@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
+import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/features/auth/presentation/view/social_log_in_view.dart';
 import 'package:llegar/core/widgets/default_button.dart';
 import 'package:llegar/features/splash/presentation/view/widgets/listenable_smooth_indicator.dart';
@@ -25,9 +26,13 @@ class _WelcomePageViewSectionState extends State<WelcomePageViewSection> {
           pageController: _pageController,
           isLastView: _isLastView,
           activeIndex: _activeIndex,
+          welcomePageViewItems: _welcomePageViewItems,
         ),
         SizedBox(height: 24.h),
-        ListenableSmoothIndicator(activeIndex: _activeIndex),
+        ListenableSmoothIndicator(
+          activeIndex: _activeIndex,
+          length: _welcomePageViewItems.length,
+        ),
         SizedBox(height: 24.h),
         ValueListenableBuilder(
           valueListenable: _isLastView,
@@ -47,4 +52,31 @@ class _WelcomePageViewSectionState extends State<WelcomePageViewSection> {
       ],
     );
   }
+
+  final List<Map<String, String>> _welcomePageViewItems = <Map<String, String>>[
+    {
+      'img': AppImages.imagesWelcomeHome,
+      'title': 'Welcome to LLEGAR',
+      'content':
+          'The best rental app of the century to rent any\nthing rentable you want every day'
+    },
+    {
+      'img': AppImages.imagesSecureApp,
+      'title': 'Secure App',
+      'content':
+          'Don’t worry about your data we have the best\nsecurity system to safe your privacy'
+    },
+    {
+      'img': AppImages.imagesMakeDeal,
+      'title': 'Make a Deal',
+      'content':
+          'We guarantee that the rental process will be\ncompleted successfully.\n“We Delivered trust“'
+    },
+    {
+      'img': AppImages.imagesTwoFactorAuth,
+      'title': 'Two factor authentication',
+      'content':
+          'We provide a service Two factor\nauthentication To ensure that your account is\nsafe from hacking'
+    },
+  ];
 }
