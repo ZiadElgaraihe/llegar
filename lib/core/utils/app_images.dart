@@ -51,6 +51,8 @@ abstract class AppImages {
 
   static const String imagesMakeDeal = "assets/images/make_deal.svg";
 
+  static const String imagesNotFound = "assets/images/not_found.svg";
+
   static const String imagesOkAmico = "assets/images/ok_amico.svg";
 
   static const String imagesParty = "assets/images/party.svg";

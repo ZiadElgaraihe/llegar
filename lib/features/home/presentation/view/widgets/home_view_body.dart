@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/home/presentation/view/widgets/app_bars/home_app_bar.dart';
-import 'package:llegar/features/home/presentation/view/widgets/sections/search_section.dart';
+import 'package:llegar/features/home/presentation/view/widgets/sections/home_search_section.dart';
 import 'package:llegar/features/home/presentation/view/widgets/sections/special_offers_section.dart';
 import 'package:llegar/features/home/presentation/view/widgets/sections/top_deals_section.dart';
 
@@ -17,7 +17,10 @@ class HomeViewBody extends StatelessWidget {
         child: const Column(
           children: [
             HomeAppBar(),
-            SearchSection(),
+            Hero(
+              tag: 'Search',
+              child: HomeSearchSection(),
+            ),
             SpecialOffersSection(),
             TopDealsSection(),
           ],

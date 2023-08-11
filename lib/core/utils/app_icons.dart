@@ -10,6 +10,8 @@ class AppIcons {
 
   static const String iconsChat = "assets/icons/chat.svg";
 
+  static const String iconsClose = "assets/icons/close.svg";
+
   static const String iconsEdit = "assets/icons/edit.svg";
 
   static const String iconsFilter = "assets/icons/filter.svg";

@@ -4,8 +4,8 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
-class TopDealsTitleAndRateRow extends StatelessWidget {
-  const TopDealsTitleAndRateRow({super.key});
+class RentItemTitleAndRateRow extends StatelessWidget {
+  const RentItemTitleAndRateRow({super.key});
 
   @override
   Widget build(BuildContext context) {

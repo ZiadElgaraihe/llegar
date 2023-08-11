@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
-import 'package:llegar/features/home/presentation/view/widgets/rows/title_and_rate_row.dart';
-import 'package:llegar/features/home/presentation/view/widgets/stacks/top_deals_item_image.dart';
-import 'package:llegar/features/home/presentation/view/widgets/texts/top_deals_details_text.dart';
+import 'package:llegar/core/widgets/rent_item_title_and_rate_row.dart';
+import 'package:llegar/core/widgets/rent_item_image.dart';
+import 'package:llegar/core/widgets/rent_item_details_text.dart';
 
-class TopDealsItem extends StatelessWidget {
-  const TopDealsItem({super.key});
+class RentItem extends StatelessWidget {
+  const RentItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class TopDealsItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TopDealsItemImage(),
+          const RentItemImage(),
           SizedBox(height: 24.h),
-          const TopDealsTitleAndRateRow(),
+          const RentItemTitleAndRateRow(),
           SizedBox(height: 12.h),
-          const TopDealsDetailsText(),
+          const RentItemDetailsText(),
           SizedBox(height: 10.h),
           Text(
             '\$230 /day',

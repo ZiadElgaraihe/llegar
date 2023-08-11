@@ -3,10 +3,8 @@ import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
-class TopDealsDetailsText extends StatelessWidget {
-  const TopDealsDetailsText({
-    super.key,
-  });
+class RentItemDetailsText extends StatelessWidget {
+  const RentItemDetailsText({super.key});
 
   @override
   Widget build(BuildContext context) {

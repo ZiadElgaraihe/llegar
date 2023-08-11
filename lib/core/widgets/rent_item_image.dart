@@ -4,8 +4,8 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/features/home/presentation/view/widgets/buttons/favourite_item.dart';
 
-class TopDealsItemImage extends StatelessWidget {
-  const TopDealsItemImage({super.key});
+class RentItemImage extends StatelessWidget {
+  const RentItemImage({super.key});
 
   @override
   Widget build(BuildContext context) {
