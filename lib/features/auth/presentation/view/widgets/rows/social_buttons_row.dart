@@ -3,8 +3,8 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/buttons/social_outlined_button.dart';
 
-class SocialRowButtons extends StatelessWidget {
-  const SocialRowButtons({
+class SocialButtonsRow extends StatelessWidget {
+  const SocialButtonsRow({
     super.key,
     required this.onGooglePressed,
     required this.onApplePressed,

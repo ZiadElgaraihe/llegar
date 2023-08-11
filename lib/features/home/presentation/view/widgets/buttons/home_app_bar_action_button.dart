@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:llegar/core/utils/app_config.dart';
 
-class HomeAppBarAction extends StatelessWidget {
-  const HomeAppBarAction({
+class HomeAppBarActionButton extends StatelessWidget {
+  const HomeAppBarActionButton({
     super.key,
     required this.icon,
   });

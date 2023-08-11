@@ -22,7 +22,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
   @override
   void initState() {
     super.initState();
-    // handleFocusChangeAndNavigation();
+    handleFocusChangeAndNavigation();
   }
 
   @override

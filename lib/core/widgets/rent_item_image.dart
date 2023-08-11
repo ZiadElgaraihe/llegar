@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
-import 'package:llegar/features/home/presentation/view/widgets/buttons/favourite_item.dart';
+import 'package:llegar/features/home/presentation/view/widgets/buttons/favourite_item_button.dart';
 
 class RentItemImage extends StatelessWidget {
   const RentItemImage({super.key});
@@ -28,7 +28,7 @@ class RentItemImage extends StatelessWidget {
         Positioned(
           top: 32.h,
           right: 32.w,
-          child: const FavouriteItem(),
+          child: const FavouriteItemButton(),
         ),
       ],
     );

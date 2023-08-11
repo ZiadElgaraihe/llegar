@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/auth/presentation/view/log_in_view.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/buttons/social_row_buttons.dart';
+import 'package:llegar/features/auth/presentation/view/widgets/rows/social_buttons_row.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/rows/auth_toggle_row.dart';
 
 class SocialSignUpSection extends StatelessWidget {
@@ -12,7 +12,7 @@ class SocialSignUpSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 37.h),
-        SocialRowButtons(
+        SocialButtonsRow(
           onGooglePressed: () {},
           onApplePressed: () {},
           onFacebookPressed: () {},

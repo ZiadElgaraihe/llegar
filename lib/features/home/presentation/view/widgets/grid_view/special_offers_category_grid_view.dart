@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
-import 'package:llegar/features/home/presentation/view/widgets/buttons/special_offers_category_item.dart';
+import 'package:llegar/features/home/presentation/view/widgets/buttons/special_offers_category_item_button.dart';
 
 class SpecialOffersCategoryGridView extends StatefulWidget {
   const SpecialOffersCategoryGridView({super.key});
@@ -25,7 +25,7 @@ class _SpecialOffersCategoryGridViewState
           crossAxisCount: 3,
         ),
         itemCount: 6,
-        itemBuilder: (context, index) => SpecialOffersCategoryItem(
+        itemBuilder: (context, index) => SpecialOffersCategoryItemButton(
           image: _categories[index]['image']!,
           title: _categories[index]['title']!,
         ),

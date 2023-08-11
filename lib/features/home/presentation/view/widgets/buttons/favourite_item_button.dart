@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 
-class FavouriteItem extends StatefulWidget {
-  const FavouriteItem({super.key});
+class FavouriteItemButton extends StatefulWidget {
+  const FavouriteItemButton({super.key});
 
   @override
-  State<FavouriteItem> createState() => _FavouriteItemState();
+  State<FavouriteItemButton> createState() => _FavouriteItemButtonState();
 }
 
-class _FavouriteItemState extends State<FavouriteItem> {
+class _FavouriteItemButtonState extends State<FavouriteItemButton> {
   final ValueNotifier<bool> _isFavourite = ValueNotifier<bool>(false);
   @override
   Widget build(BuildContext context) {
