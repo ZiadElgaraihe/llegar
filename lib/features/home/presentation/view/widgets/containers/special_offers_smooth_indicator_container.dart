@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/features/home/presentation/view/widgets/rows/special_offer_page_view_item.dart';
+import 'package:llegar/features/home/presentation/view/widgets/columns/special_offers_container_content.dart';
 
-class SpecialOffersContainer extends StatelessWidget {
-  const SpecialOffersContainer({super.key});
+class SpecialOffersSmoothIndicatorContainer extends StatelessWidget {
+  const SpecialOffersSmoothIndicatorContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SpecialOffersContainer extends StatelessWidget {
           width: 3.w,
         ),
       ),
-      child: const SpecialOfferPageViewItem(),
+      child: const SpecialOffersContainerContent(),
     );
   }
 }

@@ -44,17 +44,6 @@ class GlobalAppBar extends StatelessWidget {
             color: AppColors.kSecondaryColor,
           ),
         ),
-        const Spacer(),
-        InkWell(
-          onTap: () {},
-          borderRadius: BorderRadius.circular(25.w),
-          child: SvgPicture.asset(
-            AppIcons.iconsSearch,
-            width: 32.w,
-            height: 32.h,
-            fit: BoxFit.fill,
-          ),
-        ),
       ],
     );
   }
