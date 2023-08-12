@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/home/presentation/view/top_deals_view.dart';
 
 class TopDealsSectionTitleRow extends StatelessWidget {
   const TopDealsSectionTitleRow({super.key});
@@ -15,7 +16,9 @@ class TopDealsSectionTitleRow extends StatelessWidget {
         ),
         const Spacer(),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, TopDealsView.id);
+          },
           child: Text(
             'See All',
             style: TextStyles.textStyle14.copyWith(

@@ -25,7 +25,10 @@ class TopDealsSection extends StatelessWidget {
           ],
         ),
         SizedBox(height: 32.h),
-        const TopDealsListView(),
+        const TopDealsListView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+        ),
       ],
     );
   }
