@@ -32,6 +32,8 @@ class SpecialOfferPageViewItem extends StatelessWidget {
               Text(
                 'Get a new car discount, offer ends this week',
                 style: TextStyles.textStyle10,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),
@@ -40,7 +42,10 @@ class SpecialOfferPageViewItem extends StatelessWidget {
         SizedBox(
           height: 139.h,
           width: 219.w,
-          child: Image.asset(AppImages.imagesJeepCarPng),
+          child: Image.asset(
+            AppImages.imagesJeepCarPng,
+            fit: BoxFit.contain,
+          ),
         ),
       ],
     );

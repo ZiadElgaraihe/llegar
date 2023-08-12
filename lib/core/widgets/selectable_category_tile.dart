@@ -26,7 +26,10 @@ class SelectableCategoryTile extends StatelessWidget {
         valueListenable: selectedCategory,
         builder: (context, value, child) => Container(
           height: 42.h,
-          padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 7.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: 22.w,
+            vertical: AppConfig.sizeData.width >= 600 ? 0 : 7.h,
+          ),
           decoration: BoxDecoration(
             color: value == title ? AppColors.kPrimaryColor : Colors.white,
             borderRadius: BorderRadius.circular(22.w),

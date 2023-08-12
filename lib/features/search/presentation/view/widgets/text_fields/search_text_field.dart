@@ -36,9 +36,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
             autofocus: true,
             controller: _controller,
             focusNode: _focusNode,
-            style: TextStyles.textStyle15.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
+            style: TextStyles.textStyle14,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               filled: true,

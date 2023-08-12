@@ -16,12 +16,12 @@ class _SpecialOffersCategoryGridViewState
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260.h,
+      height: AppConfig.sizeData.width >= 600 ? 315.h : 260.h,
       child: GridView.builder(
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 12.w,
+          crossAxisSpacing: AppConfig.sizeData.width >= 600 ? 24.w : 12.w,
           crossAxisCount: 3,
         ),
         itemCount: 6,

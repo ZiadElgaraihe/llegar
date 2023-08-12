@@ -19,11 +19,12 @@ class SpecialOffersCategoryItemButton extends StatelessWidget {
     return TextButton(
       onPressed: () {},
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             height: 67.h,
             width: 67.w,
-            padding: EdgeInsets.all(17.w),
+            padding: EdgeInsets.symmetric(horizontal: 17.w, vertical: 17.h),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: AppColors.kLightGrey,
@@ -32,7 +33,12 @@ class SpecialOffersCategoryItemButton extends StatelessWidget {
                 width: 2.w,
               ),
             ),
-            child: SvgPicture.asset(image),
+            child: SvgPicture.asset(
+              image,
+              height: 33.h,
+              width: 33.w,
+              fit: BoxFit.contain,
+            ),
           ),
           SizedBox(height: 7.h),
           Text(

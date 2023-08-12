@@ -9,7 +9,7 @@ class SpecialOffersContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 172.h,
+      height: AppConfig.sizeData.width >= 600 ? 200.h : 172.h,
       padding: EdgeInsets.symmetric(horizontal: 2.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24.w),

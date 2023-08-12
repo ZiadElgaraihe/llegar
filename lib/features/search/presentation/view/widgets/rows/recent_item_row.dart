@@ -22,6 +22,7 @@ class RecentItemRow extends StatelessWidget {
         const Spacer(),
         IconButton(
           onPressed: () {},
+          splashRadius: AppConfig.sizeData.width >= 600 ? 20.w : 25.w,
           icon: SvgPicture.asset(
             AppIcons.iconsClose,
             height: 24.h,

@@ -14,7 +14,7 @@ class PriceRangeSlider extends StatefulWidget {
 
 class _PriceRangeSliderState extends State<PriceRangeSlider> {
   final ValueNotifier<SfRangeValues> _rangeValues =
-      ValueNotifier<SfRangeValues>(const SfRangeValues(0, 1000));
+      ValueNotifier<SfRangeValues>(const SfRangeValues(0, 10000));
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -22,8 +22,9 @@ class _PriceRangeSliderState extends State<PriceRangeSlider> {
       builder: (context, rangeValues, child) => SfRangeSliderTheme(
         data: SfRangeSliderThemeData(
           thumbColor: const Color(0xFFEDF2F7),
-          thumbStrokeWidth: 4.w,
+          thumbStrokeWidth: 3.w,
           thumbStrokeColor: AppColors.kPrimaryColor,
+          thumbRadius: 12.h,
           activeTrackHeight: 2.h,
           inactiveTrackHeight: 1.h,
           inactiveTrackColor: const Color.fromRGBO(30, 30, 30, 0.62),
@@ -36,7 +37,6 @@ class _PriceRangeSliderState extends State<PriceRangeSlider> {
           max: 10000,
           stepSize: 50,
           shouldAlwaysShowTooltip: true,
-          tooltipShape: const SfPaddleTooltipShape(),
           tooltipTextFormatterCallback: (actualValue, formattedText) =>
               '\$${actualValue.round()}',
           values: rangeValues,

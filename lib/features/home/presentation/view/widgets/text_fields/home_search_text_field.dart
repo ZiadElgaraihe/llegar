@@ -26,14 +26,14 @@ class HomeSearchTextField extends StatelessWidget {
             );
           },
           readOnly: true,
-          style: TextStyles.textStyle15,
+          style: TextStyles.textStyle14,
           decoration: InputDecoration(
             filled: true,
             fillColor: AppColors.kLightGrey,
             contentPadding: EdgeInsets.symmetric(vertical: 9.h),
             hintText: 'Search',
             suffixIcon: Container(
-              padding: EdgeInsets.all(8.w),
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
               margin: EdgeInsets.only(right: 8.w),
               child: SvgPicture.asset(
                 AppIcons.iconsFilter,
@@ -42,7 +42,7 @@ class HomeSearchTextField extends StatelessWidget {
               ),
             ),
             prefixIcon: Container(
-              padding: EdgeInsets.all(8.w),
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
               margin: EdgeInsets.only(left: 8.w),
               child: SvgPicture.asset(
                 AppIcons.iconsSearch,
