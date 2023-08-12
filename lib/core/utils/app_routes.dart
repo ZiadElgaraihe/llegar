@@ -9,10 +9,10 @@ import 'package:llegar/features/auth/presentation/view/user_identification_sign_
 import 'package:llegar/features/auth/presentation/view/personal_data_sign_up_view.dart';
 import 'package:llegar/features/auth/presentation/view/sign_up_view.dart';
 import 'package:llegar/features/auth/presentation/view/social_log_in_view.dart';
-import 'package:llegar/features/home/presentation/view/home_view.dart';
 import 'package:llegar/features/home/presentation/view/special_offers_view.dart';
 import 'package:llegar/features/home/presentation/view/top_deals_view.dart';
 import 'package:llegar/features/home/presentation/view/wishlist_view.dart';
+import 'package:llegar/features/navbar/presentation/view/navigation_view.dart';
 import 'package:llegar/features/splash/presentation/view/splash_view.dart';
 import 'package:llegar/features/splash/presentation/view/welcome_view.dart';
 
@@ -31,7 +31,7 @@ abstract class AppRoutes {
     ForgetPasswordView.id: (context) => const ForgetPasswordView(),
     VerifyPasswordView.id: (context) => const VerifyPasswordView(),
     ResetPasswordView.id: (context) => const ResetPasswordView(),
-    HomeView.id: (context) => const HomeView(),
+    NavigationView.id: (context) => const NavigationView(),
     WishlistView.id: (context) => const WishlistView(),
     SpecialOffersView.id: (context) => const SpecialOffersView(),
     TopDealsView.id: (context) => const TopDealsView(),

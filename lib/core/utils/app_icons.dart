@@ -6,9 +6,13 @@ class AppIcons {
 
   static const String iconsCalender = "assets/icons/calender.svg";
 
-  static const String iconsCart = "assets/icons/cart.svg";
+  static const String iconsCartActive = "assets/icons/cart_active.svg";
 
-  static const String iconsChat = "assets/icons/chat.svg";
+  static const String iconsCartInactive = "assets/icons/cart_inactive.svg";
+
+  static const String iconsChatActive = "assets/icons/chat_active.svg";
+
+  static const String iconsChatInactive = "assets/icons/chat_inactive.svg";
 
   static const String iconsClose = "assets/icons/close.svg";
 
@@ -16,7 +20,9 @@ class AppIcons {
 
   static const String iconsFilter = "assets/icons/filter.svg";
 
-  static const String iconsHome = "assets/icons/home.svg";
+  static const String iconsHomeActive = "assets/icons/home_active.svg";
+
+  static const String iconsHomeInactive = "assets/icons/home_inactive.svg";
 
   static const String iconsLeftTrend = "assets/icons/left_trend.svg";
 
@@ -26,7 +32,9 @@ class AppIcons {
 
   static const String iconsMultipleHeart = "assets/icons/multiple_heart.svg";
 
-  static const String iconsPerson = "assets/icons/person.svg";
+  static const String iconsPersonActive = "assets/icons/person_active.svg";
+
+  static const String iconsPersonInactive = "assets/icons/person_inactive.svg";
 
   static const String iconsRightTrend = "assets/icons/right_trend.svg";
 
@@ -34,7 +42,9 @@ class AppIcons {
 
   static const String iconsStar = "assets/icons/star.svg";
 
-  static const String iconsWallet = "assets/icons/wallet.svg";
+  static const String iconsWalletActive = "assets/icons/wallet_active.svg";
+
+  static const String iconsWalletInactive = "assets/icons/wallet_inactive.svg";
 
   static const String iconsWavingHand = "assets/icons/waving_hand.svg";
 }

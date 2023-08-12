@@ -19,10 +19,6 @@ class HomeViewAppBar extends StatelessWidget {
           SizedBox(width: 16.w),
           const GreetingColumn(),
           const Spacer(),
-          HomeAppBarActionButton(
-            icon: AppIcons.iconsBell,
-            onTap: () {},
-          ),
           SizedBox(width: 16.w),
           HomeAppBarActionButton(
             icon: AppIcons.iconsMultipleHeart,

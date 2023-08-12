@@ -5,7 +5,7 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/core/widgets/default_button.dart';
-import 'package:llegar/features/home/presentation/view/home_view.dart';
+import 'package:llegar/features/navbar/presentation/view/navigation_view.dart';
 
 class SuccessfulViewBody extends StatelessWidget {
   const SuccessfulViewBody({super.key});
@@ -41,7 +41,7 @@ class SuccessfulViewBody extends StatelessWidget {
           DefaultButton(
             btnTitle: 'Get Started',
             onPressed: () {
-              Navigator.pushReplacementNamed(context, HomeView.id);
+              Navigator.pushReplacementNamed(context, NavigationView.id);
             },
           ),
         ],

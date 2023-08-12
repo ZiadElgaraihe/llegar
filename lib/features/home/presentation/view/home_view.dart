@@ -4,8 +4,6 @@ import 'package:llegar/features/home/presentation/view/widgets/home_view_body.da
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  static const String id = '/HomeView';
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
