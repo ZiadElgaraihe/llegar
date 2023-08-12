@@ -6,14 +6,16 @@ class HomeAppBarActionButton extends StatelessWidget {
   const HomeAppBarActionButton({
     super.key,
     required this.icon,
+    required this.onTap,
   });
 
   final String icon;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       borderRadius: BorderRadius.circular(50.w),
       child: SvgPicture.asset(
         icon,

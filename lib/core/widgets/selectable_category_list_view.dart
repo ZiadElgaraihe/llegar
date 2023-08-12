@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/widgets/selectable_category_tile.dart';
 
-class ItemTypeListView extends StatefulWidget {
-  const ItemTypeListView({super.key});
+class SelectableCategoryListView extends StatefulWidget {
+  const SelectableCategoryListView({
+    super.key,
+    this.icon,
+    required this.items,
+  });
+
+  final String? icon;
+  final List<String> items;
 
   @override
-  State<ItemTypeListView> createState() => _ItemTypeListViewState();
+  State<SelectableCategoryListView> createState() =>
+      _SelectableCategoryListViewState();
 }
 
-class _ItemTypeListViewState extends State<ItemTypeListView> {
+class _SelectableCategoryListViewState
+    extends State<SelectableCategoryListView> {
   final ValueNotifier<String> _selectedType = ValueNotifier<String>('All');
   @override
   Widget build(BuildContext context) {
@@ -18,23 +27,14 @@ class _ItemTypeListViewState extends State<ItemTypeListView> {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        itemCount: _types.length,
+        itemCount: widget.items.length,
         itemBuilder: (context, index) => SelectableCategoryTile(
-          title: _types[index],
+          title: widget.items[index],
           selectedCategory: _selectedType,
+          icon: widget.icon,
         ),
         separatorBuilder: (context, index) => SizedBox(width: 8.w),
       ),
     );
   }
-
-  final List<String> _types = <String>[
-    'All',
-    'Property',
-    'Transportation',
-    'Play Areas',
-    'Clothes',
-    'Event Rentals',
-    'Electronics',
-  ];
 }
