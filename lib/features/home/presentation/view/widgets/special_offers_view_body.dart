@@ -10,7 +10,7 @@ class SpecialOffersViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(top: 40.h, right: 24.w, left: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: const Column(
           children: [
             GlobalAppBar(title: 'Special Offers'),

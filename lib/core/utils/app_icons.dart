@@ -1,5 +1,6 @@
 abstract class AppIcons {
-  
+  static const String iconAddItem = "assets/icons/add_item.svg";
+
   static const String iconsArrow = "assets/icons/arrow.svg";
 
   static const String iconsBell = "assets/icons/bell.svg";
@@ -47,6 +48,10 @@ abstract class AppIcons {
   static const String iconsMultipleHeart = "assets/icons/multiple_heart.svg";
 
   static const String iconsMyActivities = "assets/icons/my_activities.svg";
+
+  static const String iconsMyItems = "assets/icons/my_items.svg";
+
+  static const String iconsMyRentedItems = "assets/icons/my_rented_items.svg";
 
   static const String iconsNotification = "assets/icons/notification.svg";
 
