@@ -19,6 +19,8 @@ abstract class AppImages {
   static const String imagesContinueWithGoogle =
       "assets/images/continue_with_google.svg";
 
+  static const String imagesCrown = "assets/images/crown.svg";
+
   static const String imagesElectronic = "assets/images/electronic.svg";
 
   static const String imagesEllipse10 = "assets/images/ellipse10.svg";

@@ -3,6 +3,7 @@ import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/features/home/presentation/view/home_view.dart';
 import 'package:llegar/features/navbar/presentation/view/widgets/navigation_view_body.dart';
 import 'package:llegar/features/navbar/presentation/view/widgets/navigation_view_nav_bar.dart';
+import 'package:llegar/features/profile/presentation/view/profile_view.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({super.key});
@@ -55,9 +56,7 @@ class _NavigationViewState extends State<NavigationView> {
     const SafeArea(
       child: Text('Wallet'),
     ),
-    const SafeArea(
-      child: Text('Profile'),
-    ),
+    const ProfileView(),
   ];
 
   final List<Map<String, String>> _navigationBarItems = [
