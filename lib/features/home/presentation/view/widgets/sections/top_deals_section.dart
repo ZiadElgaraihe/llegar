@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/widgets/selectable_category_list_view.dart';
-import 'package:llegar/features/home/presentation/view/widgets/list_view/top_deals_list_view.dart';
+import 'package:llegar/core/widgets/items_list_view.dart';
 import 'package:llegar/features/home/presentation/view/widgets/rows/top_deals_section_title_row.dart';
 
 class TopDealsSection extends StatelessWidget {
@@ -25,7 +25,7 @@ class TopDealsSection extends StatelessWidget {
           ],
         ),
         SizedBox(height: 32.h),
-        const TopDealsListView(
+        const ItemsListView(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
         ),

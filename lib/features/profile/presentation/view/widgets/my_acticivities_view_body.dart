@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/widgets/global_app_bar.dart';
-import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_item_button.dart';
+import 'package:llegar/features/profile/presentation/view/widgets/sections/my_activities_section.dart';
 
 class MyActivitiesViewBody extends StatelessWidget {
   const MyActivitiesViewBody({super.key});
@@ -12,25 +11,10 @@ class MyActivitiesViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
+        child: const Column(
           children: [
-            const GlobalAppBar(title: 'My Activities'),
-            SizedBox(height: 40.h),
-            SettingItemButton(
-              icon: AppIcons.iconsMyItems,
-              title: 'My Items',
-              onTap: () {},
-            ),
-            SettingItemButton(
-              icon: AppIcons.iconsMyRentedItems,
-              title: 'My Rented Items',
-              onTap: () {},
-            ),
-            SettingItemButton(
-              icon: AppIcons.iconAddItem,
-              title: 'Add Item',
-              onTap: () {},
-            ),
+            GlobalAppBar(title: 'My Activities'),
+            MyActivitiesSection(),
           ],
         ),
       ),

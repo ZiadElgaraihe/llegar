@@ -5,7 +5,9 @@ import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/features/home/presentation/view/widgets/buttons/favourite_item_button.dart';
 
 class RentItemImage extends StatelessWidget {
-  const RentItemImage({super.key});
+  const RentItemImage({super.key, required this.canAddToFavourite});
+
+  final bool canAddToFavourite;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +27,12 @@ class RentItemImage extends StatelessWidget {
             fit: BoxFit.fill,
           ),
         ),
-        Positioned(
-          top: 32.h,
-          right: 32.w,
-          child: const FavouriteItemButton(),
-        ),
+        if (canAddToFavourite)
+          Positioned(
+            top: 32.h,
+            right: 32.w,
+            child: const FavouriteItemButton(),
+          ),
       ],
     );
   }

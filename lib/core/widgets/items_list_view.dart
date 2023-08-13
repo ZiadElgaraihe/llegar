@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/widgets/rent_item.dart';
 
-class TopDealsListView extends StatelessWidget {
-  const TopDealsListView({
+class ItemsListView extends StatelessWidget {
+  const ItemsListView({
     super.key,
     required this.shrinkWrap,
     required this.physics,
+    this.canAddToFavourite = true,
   });
 
   final bool shrinkWrap;
   final ScrollPhysics physics;
+  final bool canAddToFavourite;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,9 @@ class TopDealsListView extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 40.h),
       physics: physics,
       itemCount: 4,
-      itemBuilder: (context, index) => const RentItem(),
+      itemBuilder: (context, index) => RentItem(
+        canAddToFavourite: canAddToFavourite,
+      ),
       separatorBuilder: (context, index) => SizedBox(height: 40.h),
     );
   }

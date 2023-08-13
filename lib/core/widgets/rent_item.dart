@@ -6,7 +6,9 @@ import 'package:llegar/core/widgets/rent_item_image.dart';
 import 'package:llegar/core/widgets/rent_item_details_text.dart';
 
 class RentItem extends StatelessWidget {
-  const RentItem({super.key});
+  const RentItem({super.key, required this.canAddToFavourite});
+
+  final bool canAddToFavourite;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class RentItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const RentItemImage(),
+          RentItemImage(canAddToFavourite: canAddToFavourite),
           SizedBox(height: 24.h),
           const RentItemTitleAndRateRow(),
           SizedBox(height: 12.h),

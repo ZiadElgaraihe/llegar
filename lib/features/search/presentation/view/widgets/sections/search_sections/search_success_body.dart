@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/features/search/presentation/view/widgets/list_views/search_list_view.dart';
+import 'package:llegar/features/search/presentation/view/widgets/sections/search_sections/search_result_section.dart';
 import 'package:llegar/features/search/presentation/view/widgets/rows/search_result_title.dart';
 
 class SearchSuccessBody extends StatelessWidget {
@@ -13,7 +13,7 @@ class SearchSuccessBody extends StatelessWidget {
         children: [
           const SearchResultTitle(),
           SizedBox(height: 40.h),
-          const SearchListView(),
+          const SearchResultSection(),
         ],
       ),
     );

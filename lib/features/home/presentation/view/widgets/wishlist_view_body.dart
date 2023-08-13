@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/widgets/global_app_bar.dart';
-import 'package:llegar/features/home/presentation/view/widgets/list_view/wishlist_list_view.dart';
+import 'package:llegar/features/home/presentation/view/widgets/list_view/my_wishlist_list_view.dart';
 
 class WishlistViewBody extends StatelessWidget {
   const WishlistViewBody({super.key});
@@ -15,7 +15,7 @@ class WishlistViewBody extends StatelessWidget {
           children: [
             GlobalAppBar(title: 'My Wishlist'),
             Expanded(
-              child: WishlistListView(),
+              child: MyWishlistListView(),
             ),
           ],
         ),
