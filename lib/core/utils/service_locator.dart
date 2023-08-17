@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:llegar/core/app_cubit/app_cubit.dart';
-import 'package:llegar/core/utils/helpers/dio_helper.dart';
+import 'package:llegar/core/helpers/dio_helper.dart';
 import 'package:llegar/features/auth/data/services/log_in_service.dart';
 import 'package:llegar/features/auth/data/services/reset_password_service.dart';
 import 'package:llegar/features/auth/data/services/sign_up_service.dart';

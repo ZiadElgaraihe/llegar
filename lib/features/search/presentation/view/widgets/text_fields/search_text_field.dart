@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
@@ -49,7 +50,11 @@ class _SearchTextFieldState extends State<SearchTextField> {
                   color: Colors.transparent,
                   child: IconButton(
                     onPressed: () {
-                      showSearchFilter(context);
+                      futureDelayedNavigator(
+                        () {
+                          showSearchFilter(context);
+                        },
+                      );
                     },
                     padding: EdgeInsets.zero,
                     splashRadius: 15.w,

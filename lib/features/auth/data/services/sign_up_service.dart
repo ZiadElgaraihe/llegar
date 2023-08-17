@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:llegar/core/errors/server_failure.dart';
-import 'package:llegar/core/utils/helpers/dio_helper.dart';
+import 'package:llegar/core/helpers/dio_helper.dart';
 import 'package:llegar/features/auth/data/models/user_model.dart';
 import 'package:llegar/features/auth/data/repos/sign_up_repo.dart';
 

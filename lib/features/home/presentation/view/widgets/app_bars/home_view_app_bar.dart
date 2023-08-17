@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/features/home/presentation/view/widgets/buttons/home_app_bar_action_button.dart';
@@ -23,7 +24,11 @@ class HomeViewAppBar extends StatelessWidget {
           HomeAppBarActionButton(
             icon: AppIcons.iconsMultipleHeart,
             onTap: () {
-              Navigator.pushNamed(context, WishlistView.id);
+              futureDelayedNavigator(
+                () {
+                  Navigator.pushNamed(context, WishlistView.id);
+                },
+              );
             },
           ),
         ],

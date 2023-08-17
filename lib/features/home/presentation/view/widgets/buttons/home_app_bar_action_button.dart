@@ -17,11 +17,14 @@ class HomeAppBarActionButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(50.w),
-      child: SvgPicture.asset(
-        icon,
-        height: 24.h,
-        width: 24.w,
-        fit: BoxFit.fill,
+      child: Padding(
+        padding: EdgeInsets.all(8.w),
+        child: SvgPicture.asset(
+          icon,
+          height: 24.h,
+          width: 24.w,
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }

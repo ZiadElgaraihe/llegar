@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
@@ -23,7 +24,13 @@ class SettingItemButton extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 20.h),
       child: InkWell(
         borderRadius: BorderRadius.circular(12.w),
-        onTap: onTap,
+        onTap: () {
+          futureDelayedNavigator(
+            () {
+              onTap();
+            },
+          );
+        },
         child: Row(
           children: [
             SvgPicture.asset(
