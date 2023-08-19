@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/app_cubit/app_cubit.dart';
+import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_routes.dart';
 import 'package:llegar/core/utils/app_themes.dart';
@@ -30,7 +31,7 @@ class Llegar extends StatelessWidget {
     AppConfig.sizeData = MediaQuery.sizeOf(context);
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: Colors.transparent,
+        statusBarColor: AppColors.kTransparent,
       ),
     );
     return MultiBlocProvider(

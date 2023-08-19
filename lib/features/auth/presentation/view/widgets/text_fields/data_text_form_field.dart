@@ -8,7 +8,8 @@ class DataTextFormField extends StatelessWidget {
     super.key,
     required this.hint,
     required this.keyboardType,
-    required this.validator, required this.onSaved,
+    required this.validator,
+    required this.onSaved,
   });
 
   final String hint;
@@ -47,7 +48,7 @@ class DataTextFormField extends StatelessWidget {
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6.w),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: AppColors.kRed,
               width: 1.w,
             ),
           ),

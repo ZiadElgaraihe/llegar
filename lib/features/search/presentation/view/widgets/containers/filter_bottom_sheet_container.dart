@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/search/presentation/view/widgets/filter_bottom_sheet_body.dart';
 
@@ -16,7 +17,7 @@ class FilterBottomSheetContainer extends StatelessWidget {
         bottom: 40.h,
       ),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.kBackgroundColor,
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(40.w),
         ),

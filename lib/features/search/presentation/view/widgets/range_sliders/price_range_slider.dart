@@ -28,7 +28,7 @@ class _PriceRangeSliderState extends State<PriceRangeSlider> {
           activeTrackHeight: 2.h,
           inactiveTrackHeight: 1.h,
           inactiveTrackColor: const Color.fromRGBO(30, 30, 30, 0.62),
-          tooltipBackgroundColor: Colors.transparent,
+          tooltipBackgroundColor: AppColors.kTransparent,
           tooltipTextStyle:
               TextStyles.textStyle16.copyWith(color: AppColors.kPrimaryColor),
         ),

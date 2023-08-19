@@ -92,7 +92,7 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6.w),
               borderSide: BorderSide(
-                color: Colors.red,
+                color: AppColors.kRed,
                 width: 1.w,
               ),
             ),

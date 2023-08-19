@@ -31,7 +31,9 @@ class SelectableCategoryTile extends StatelessWidget {
             vertical: AppConfig.sizeData.width >= 600 ? 0 : 7.h,
           ),
           decoration: BoxDecoration(
-            color: value == title ? AppColors.kPrimaryColor : Colors.white,
+            color: value == title
+                ? AppColors.kPrimaryColor
+                : AppColors.kBackgroundColor,
             borderRadius: BorderRadius.circular(22.w),
             border: Border.all(
               color: AppColors.kPrimaryColor,

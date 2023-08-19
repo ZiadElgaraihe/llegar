@@ -17,7 +17,7 @@ class EditImageButton extends StatelessWidget {
         color: AppColors.kPrimaryColor,
       ),
       child: Material(
-        color: Colors.transparent,
+        color: AppColors.kTransparent,
         child: InkWell(
           onTap: () {},
           child: Padding(

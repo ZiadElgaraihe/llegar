@@ -19,7 +19,7 @@ class EditPhotoContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.w),
       ),
       child: Material(
-        color: Colors.transparent,
+        color: AppColors.kTransparent,
         child: InkWell(
           onTap: () {},
           child: Padding(

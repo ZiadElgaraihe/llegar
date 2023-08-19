@@ -7,8 +7,8 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
-class TypeAHeadTextFormField extends StatefulWidget {
-  const TypeAHeadTextFormField({
+class AuthTypeAHeadTextFormField extends StatefulWidget {
+  const AuthTypeAHeadTextFormField({
     super.key,
     required this.hint,
     required this.suggestionList,
@@ -22,10 +22,12 @@ class TypeAHeadTextFormField extends StatefulWidget {
   final void Function(String? newValue) onSaved;
 
   @override
-  State<TypeAHeadTextFormField> createState() => _TypeAHeadTextFormFieldState();
+  State<AuthTypeAHeadTextFormField> createState() =>
+      _AuthTypeAHeadTextFormFieldState();
 }
 
-class _TypeAHeadTextFormFieldState extends State<TypeAHeadTextFormField> {
+class _AuthTypeAHeadTextFormFieldState
+    extends State<AuthTypeAHeadTextFormField> {
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -67,7 +69,7 @@ class _TypeAHeadTextFormFieldState extends State<TypeAHeadTextFormField> {
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6.w),
               borderSide: BorderSide(
-                color: Colors.red,
+                color: AppColors.kRed,
                 width: 1.w,
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 
 class FavouriteItemButton extends StatefulWidget {
@@ -21,7 +22,7 @@ class _FavouriteItemButtonState extends State<FavouriteItemButton> {
         builder: (context, value, child) => Icon(
           value ? Icons.favorite : Icons.favorite_border,
           size: 32.w,
-          color: Colors.white,
+          color: AppColors.kBackgroundColor,
         ),
       ),
     );

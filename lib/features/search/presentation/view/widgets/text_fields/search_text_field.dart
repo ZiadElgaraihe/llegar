@@ -47,7 +47,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
               suffixIcon: Padding(
                 padding: EdgeInsets.only(right: 8.w),
                 child: Material(
-                  color: Colors.transparent,
+                  color: AppColors.kTransparent,
                   child: IconButton(
                     onPressed: () {
                       futureDelayedNavigator(
@@ -71,7 +71,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
                 child: ValueListenableBuilder(
                   valueListenable: _iconColor,
                   builder: (context, color, child) => Material(
-                    color: Colors.transparent,
+                    color: AppColors.kTransparent,
                     child: IconButton(
                       onPressed: () {},
                       padding: EdgeInsets.zero,

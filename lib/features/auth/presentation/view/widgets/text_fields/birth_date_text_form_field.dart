@@ -44,7 +44,7 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
               EdgeInsets.symmetric(vertical: 14.5.h, horizontal: 16.w),
           hintText: 'yyyy/mm/dd',
           suffixIcon: Material(
-            color: Colors.transparent,
+            color: AppColors.kTransparent,
             child: IconButton(
               onPressed: () async {
                 DateTime? date = await showDatePicker(

@@ -24,7 +24,7 @@ class LoadingButton extends StatelessWidget {
       ),
       child: Center(
         child: SpinKitThreeBounce(
-          color: Colors.white,
+          color: AppColors.kBackgroundColor,
           size: 30.w,
         ),
       ),
