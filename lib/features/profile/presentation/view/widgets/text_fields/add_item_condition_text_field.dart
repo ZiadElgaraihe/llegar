@@ -20,7 +20,7 @@ class AddItemConditionTextFormField extends StatelessWidget {
             color: AppColors.kSecondaryColor,
           ),
           filled: true,
-          fillColor: AppColors.kLightGrey,
+          fillColor: AppColors.kLightBlueGrey,
           contentPadding:
               EdgeInsets.symmetric(vertical: 10.h, horizontal: 24.w),
           border: OutlineInputBorder(

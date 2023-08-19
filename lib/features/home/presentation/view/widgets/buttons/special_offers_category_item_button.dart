@@ -27,7 +27,7 @@ class SpecialOffersCategoryItemButton extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 17.w, vertical: 17.h),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: AppColors.kLightGrey,
+              color: AppColors.kLightBlueGrey,
               border: Border.all(
                 color: AppColors.kPrimaryColor,
                 width: 2.w,

@@ -13,7 +13,7 @@ class SpecialOffersContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 2.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24.w),
-        color: AppColors.kLightGrey,
+        color: AppColors.kLightBlueGrey,
         border: Border.all(
           color: AppColors.kPrimaryColor,
           width: 3.w,

@@ -4,8 +4,10 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
 class OtpTextField extends StatefulWidget {
-  const OtpTextField(
-      {super.key, required this.resetCodeControllers, });
+  const OtpTextField({
+    super.key,
+    required this.resetCodeControllers,
+  });
 
   final List<TextEditingController> resetCodeControllers;
 
@@ -26,7 +28,7 @@ class _OtpTextFieldState extends State<OtpTextField> {
           width: 83.w,
           margin: EdgeInsets.symmetric(horizontal: 4.w),
           decoration: BoxDecoration(
-            color: AppColors.kLightGrey,
+            color: AppColors.kLightBlueGrey,
             borderRadius: BorderRadius.circular(5.w),
           ),
           child: TextField(

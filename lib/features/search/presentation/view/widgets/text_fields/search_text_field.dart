@@ -41,7 +41,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               filled: true,
-              fillColor: AppColors.kLightGrey,
+              fillColor: AppColors.kLightBlueGrey,
               contentPadding: EdgeInsets.symmetric(vertical: 9.h),
               hintText: 'Search',
               suffixIcon: Padding(

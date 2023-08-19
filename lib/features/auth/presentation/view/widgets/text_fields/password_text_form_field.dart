@@ -45,7 +45,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
           keyboardType: TextInputType.visiblePassword,
           decoration: InputDecoration(
             filled: true,
-            fillColor: AppColors.kLightGrey,
+            fillColor: AppColors.kLightBlueGrey,
             contentPadding: EdgeInsets.symmetric(vertical: 22.h),
             hintText: 'Password',
             suffixIcon: ValueListenableBuilder(

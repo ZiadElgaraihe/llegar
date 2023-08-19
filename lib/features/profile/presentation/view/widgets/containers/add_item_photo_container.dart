@@ -16,7 +16,7 @@ class AddItemPhotoContainer extends StatelessWidget {
       margin: EdgeInsets.only(left: 8.w, right: 8.w, bottom: 40.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(22.w),
-        color: AppColors.kLightGrey,
+        color: AppColors.kLightBlueGrey,
       ),
       child: Material(
         color: AppColors.kTransparent,

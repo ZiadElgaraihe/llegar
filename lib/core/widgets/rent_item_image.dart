@@ -18,7 +18,7 @@ class RentItemImage extends StatelessWidget {
           width: 382.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22.w),
-            color: AppColors.kLightGrey,
+            color: AppColors.kLightBlueGrey,
           ),
           child: Image.asset(
             AppImages.imagesBMWCarPng,

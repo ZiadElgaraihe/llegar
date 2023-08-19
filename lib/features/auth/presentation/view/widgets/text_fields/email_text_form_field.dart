@@ -41,7 +41,7 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
         style: TextStyles.textStyle15,
         decoration: InputDecoration(
           filled: true,
-          fillColor: AppColors.kLightGrey,
+          fillColor: AppColors.kLightBlueGrey,
           contentPadding: EdgeInsets.symmetric(vertical: 22.h),
           hintText: 'Email',
           suffixIcon: Padding(padding: EdgeInsets.only(right: 33.w)),

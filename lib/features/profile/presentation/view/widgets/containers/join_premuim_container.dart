@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/core/utils/text_styles.dart';
+import 'package:llegar/features/profile/presentation/view/premium_subscribe_view.dart';
 
 class JoinPremuimContainer extends StatelessWidget {
   const JoinPremuimContainer({super.key});
@@ -21,7 +23,13 @@ class JoinPremuimContainer extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          futureDelayedNavigator(
+            () {
+              Navigator.pushNamed(context, PremiumSubscribeView.id);
+            },
+          );
+        },
         borderRadius: BorderRadius.circular(30.w),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 17.h),

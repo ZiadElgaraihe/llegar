@@ -19,6 +19,9 @@ abstract class AppIcons {
 
   static const String iconsChevronRight = "assets/icons/chevron_right.svg";
 
+  static const String iconsCircleCheckSolid =
+      "assets/icons/circle_check_solid.svg";
+
   static const String iconsClose = "assets/icons/close.svg";
 
   static const String iconsContactUs = "assets/icons/contact_us.svg";

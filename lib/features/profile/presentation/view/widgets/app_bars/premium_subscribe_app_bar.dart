@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
+import 'package:llegar/core/utils/app_colors.dart';
+import 'package:llegar/core/utils/app_config.dart';
+import 'package:llegar/core/utils/app_icons.dart';
+import 'package:llegar/core/utils/text_styles.dart';
+
+class PremiumSubscribeAppBar extends StatelessWidget {
+  const PremiumSubscribeAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 23.w, top: 40.h, bottom: 26.h),
+      alignment: Alignment.centerLeft,
+      child: TextButton(
+        onPressed: () {
+          futureDelayedNavigator(
+            () {
+              Navigator.pop(context);
+            },
+          );
+        },
+        style: ButtonStyle(
+          fixedSize: MaterialStatePropertyAll(
+            Size(94.w, 34.h),
+          ),
+          padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+        ),
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              AppIcons.iconsLeftTrend,
+              width: 20.w,
+              height: 22.h,
+              fit: BoxFit.fill,
+            ),
+            SizedBox(width: 16.w),
+            Text(
+              'Back',
+              style: TextStyles.textStyle24.copyWith(
+                fontWeight: FontWeight.w600,
+                fontFamily: GoogleFonts.inter().fontFamily,
+                color: AppColors.kSecondaryColor,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

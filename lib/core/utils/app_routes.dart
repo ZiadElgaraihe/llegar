@@ -15,6 +15,7 @@ import 'package:llegar/features/home/presentation/view/wishlist_view.dart';
 import 'package:llegar/features/navbar/presentation/view/navigation_view.dart';
 import 'package:llegar/features/profile/presentation/view/add_item_view.dart';
 import 'package:llegar/features/profile/presentation/view/my_activities_view.dart';
+import 'package:llegar/features/profile/presentation/view/premium_subscribe_view.dart';
 import 'package:llegar/features/splash/presentation/view/splash_view.dart';
 import 'package:llegar/features/splash/presentation/view/welcome_view.dart';
 
@@ -39,5 +40,6 @@ abstract class AppRoutes {
     TopDealsView.id: (context) => const TopDealsView(),
     MyActivitiesView.id: (context) => const MyActivitiesView(),
     AddItemView.id: (context) => const AddItemView(),
+    PremiumSubscribeView.id: (context) => const PremiumSubscribeView(),
   };
 }

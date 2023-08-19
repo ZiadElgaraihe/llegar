@@ -33,7 +33,7 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
         readOnly: true,
         decoration: InputDecoration(
           filled: true,
-          fillColor: AppColors.kLightGrey,
+          fillColor: AppColors.kLightBlueGrey,
           contentPadding:
               EdgeInsets.symmetric(vertical: 14.5.h, horizontal: 16.w),
           hintText: 'yyyy/mm/dd',
