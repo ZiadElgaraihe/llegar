@@ -20,7 +20,7 @@ class FilterBottomSheetBody extends StatelessWidget {
         ItemConditionSection(),
         const PriceRangeSection(),
         RatingSection(),
-        FilterCitySection(),
+        const FilterCitySection(),
         const ButtonsSection()
       ],
     );
