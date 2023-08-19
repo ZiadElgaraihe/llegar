@@ -29,24 +29,20 @@ class ProfileTypeAHeadTextFormField extends StatefulWidget {
 class _ProfileTypeAHeadTextFormFieldState
     extends State<ProfileTypeAHeadTextFormField> {
   final TextEditingController _controller = TextEditingController();
-  final ValueNotifier<bool> _isNotEmpty = ValueNotifier<bool>(false);
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  final ValueNotifier<bool> _isFocused = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: _isNotEmpty,
+      valueListenable: _isFocused,
       builder: (context, value, child) => AnimatedPadding(
         duration: const Duration(milliseconds: 500),
-        padding: EdgeInsets.only(bottom: value ? 175.h : 40.h),
+        padding: EdgeInsets.only(
+          bottom: value ? (widget.suggestionListHeight + 40).h : 40.h,
+        ),
         child: TypeAheadFormField(
           onSuggestionsBoxToggle: (value) {
-            _isNotEmpty.value = value;
+            _isFocused.value = value;
           },
           validator: (value) {
             return typeAHeadValidator(value, widget.suggestionList);

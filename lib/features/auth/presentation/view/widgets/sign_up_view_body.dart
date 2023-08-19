@@ -10,16 +10,18 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          AuthenticationAppBar(),
-          LogoSection(title: 'Create Your Account'),
-          ClassicSignUpSection(),
-          OrDividerWidget(title: 'or continue with'),
-          SocialSignUpSection(),
-        ],
+    return const SafeArea(
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            AuthenticationAppBar(),
+            LogoSection(title: 'Create Your Account'),
+            ClassicSignUpSection(),
+            OrDividerWidget(title: 'or continue with'),
+            SocialSignUpSection(),
+          ],
+        ),
       ),
     );
   }

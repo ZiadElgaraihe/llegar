@@ -15,7 +15,7 @@ class SpecialOffersSection extends StatelessWidget {
         SizedBox(height: 43.h),
         const SpecialOffersSmoothIndicatorContainer(),
         SizedBox(height: 40.h),
-        const SpecialOffersCategoryGridView(),
+        SpecialOffersCategoryGridView(),
       ],
     );
   }

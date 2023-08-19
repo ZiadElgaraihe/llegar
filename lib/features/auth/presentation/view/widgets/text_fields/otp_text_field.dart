@@ -17,11 +17,6 @@ class _OtpTextFieldState extends State<OtpTextField> {
   List<FocusNode> focusNodes = List.generate(4, (index) => FocusNode());
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

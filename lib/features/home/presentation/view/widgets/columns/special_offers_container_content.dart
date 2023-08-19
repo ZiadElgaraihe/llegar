@@ -28,8 +28,6 @@ class _SpecialOffersContainerContentState
   void dispose() {
     //cancel timer
     _timer.cancel();
-    //dispose controller
-    _pageController.dispose();
     super.dispose();
   }
 

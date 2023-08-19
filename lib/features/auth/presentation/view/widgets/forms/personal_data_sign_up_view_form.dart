@@ -15,10 +15,10 @@ class PersonalDataSignUpViewForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: const Column(
+      child: Column(
         children: [
-          NameDataSection(),
-          BirthDateSection(),
+          const NameDataSection(),
+          const BirthDateSection(),
           GenderAndCitySection(),
         ],
       ),

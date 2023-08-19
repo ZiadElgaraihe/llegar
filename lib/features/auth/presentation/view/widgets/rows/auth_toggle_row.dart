@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
@@ -27,7 +28,13 @@ class AuthToggleRow extends StatelessWidget {
         ),
         SizedBox(width: 8.w),
         InkWell(
-          onTap: onTap,
+          onTap: () {
+            futureDelayedNavigator(
+              () {
+                onTap();
+              },
+            );
+          },
           child: Text(
             btnTitle,
             style: TextStyles.textStyle14,

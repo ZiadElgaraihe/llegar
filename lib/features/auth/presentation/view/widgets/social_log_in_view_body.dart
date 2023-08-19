@@ -8,15 +8,17 @@ class SocialLogInViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Center(
-        child: Column(
-          children: [
-            LetYouInSocialSection(),
-            OrDividerWidget(title: 'or'),
-            LetYouInClassicSection(),
-          ],
+    return const SafeArea(
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Center(
+          child: Column(
+            children: [
+              LetYouInSocialSection(),
+              OrDividerWidget(title: 'or'),
+              LetYouInClassicSection(),
+            ],
+          ),
         ),
       ),
     );

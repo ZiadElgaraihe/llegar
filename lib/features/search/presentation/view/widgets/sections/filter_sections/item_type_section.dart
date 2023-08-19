@@ -4,7 +4,7 @@ import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/core/widgets/selectable_category_list_view.dart';
 
 class ItemTypeSection extends StatelessWidget {
-  const ItemTypeSection({super.key});
+  ItemTypeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +16,21 @@ class ItemTypeSection extends StatelessWidget {
           style: TextStyles.textStyle20,
         ),
         SizedBox(height: 24.h),
-        const SelectableCategoryListView(
-          items: <String>[
-            'All',
-            'Property',
-            'Transportation',
-            'Play Areas',
-            'Clothes',
-            'Event Rentals',
-            'Electronics',
-          ],
+        SelectableCategoryListView(
+          items: _itemTypes,
         ),
         SizedBox(height: 24.h),
       ],
     );
   }
+
+  final List<String> _itemTypes = <String>[
+    'All',
+    'Property',
+    'Transportation',
+    'Play Areas',
+    'Clothes',
+    'Event Rentals',
+    'Electronics',
+  ];
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
@@ -16,7 +17,13 @@ class DefaultButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: () {
+        futureDelayedNavigator(
+          () {
+            onPressed();
+          },
+        );
+      },
       style: ButtonStyle(
         backgroundColor:
             const MaterialStatePropertyAll(AppColors.kPrimaryColor),

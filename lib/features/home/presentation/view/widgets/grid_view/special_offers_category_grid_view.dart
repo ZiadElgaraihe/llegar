@@ -3,16 +3,9 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 import 'package:llegar/features/home/presentation/view/widgets/buttons/special_offers_category_item_button.dart';
 
-class SpecialOffersCategoryGridView extends StatefulWidget {
-  const SpecialOffersCategoryGridView({super.key});
+class SpecialOffersCategoryGridView extends StatelessWidget {
+  SpecialOffersCategoryGridView({super.key});
 
-  @override
-  State<SpecialOffersCategoryGridView> createState() =>
-      _SpecialOffersCategoryGridViewState();
-}
-
-class _SpecialOffersCategoryGridViewState
-    extends State<SpecialOffersCategoryGridView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

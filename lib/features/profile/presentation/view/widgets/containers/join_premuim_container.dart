@@ -12,7 +12,6 @@ class JoinPremuimContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 112.h,
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.w),

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
@@ -29,89 +30,95 @@ class AuthTypeAHeadTextFormField extends StatefulWidget {
 class _AuthTypeAHeadTextFormFieldState
     extends State<AuthTypeAHeadTextFormField> {
   final TextEditingController _controller = TextEditingController();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  final ValueNotifier<bool> _isFocused = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 398.w,
-      child: TypeAheadFormField(
-        validator: (value) {
-          return typeAHeadValidator(value, widget.suggestionList);
-        },
-        onSaved: widget.onSaved,
-        textFieldConfiguration: TextFieldConfiguration(
-          controller: _controller,
-          style: TextStyles.textStyle15,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
-            hintText: widget.hint,
-            suffix: SvgPicture.asset(
-              AppIcons.iconsArrow,
-              colorFilter: const ColorFilter.mode(
-                  AppColors.kDarkGrey, BlendMode.srcATop),
-            ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6.w),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6.w),
-              borderSide: BorderSide(
-                color: const Color.fromRGBO(243, 154, 74, 0.50),
-                width: 1.5.w,
-              ),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(6.w),
-              borderSide: BorderSide(
-                color: AppColors.kRed,
-                width: 1.w,
-              ),
-            ),
-          ),
+    return ValueListenableBuilder(
+      valueListenable: _isFocused,
+      builder: (context, value, child) => AnimatedPadding(
+        duration: const Duration(milliseconds: 500),
+        padding: EdgeInsets.only(
+          bottom: value ? (widget.suggestionListHeight + 32).h : 16.h,
         ),
-        suggestionsCallback: (pattern) {
-          return widget.suggestionList.where(
-            (element) => element.toLowerCase().contains(
-                  pattern.toLowerCase(),
+        child: TypeAheadFormField(
+          validator: (value) {
+            return typeAHeadValidator(value, widget.suggestionList);
+          },
+          onSaved: widget.onSaved,
+          onSuggestionsBoxToggle: (isSuggestionsBoxToggle) {
+            _isFocused.value = isSuggestionsBoxToggle;
+          },
+          textFieldConfiguration: TextFieldConfiguration(
+            controller: _controller,
+            style: TextStyles.textStyle15,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
+              hintText: widget.hint,
+              suffix: SvgPicture.asset(
+                AppIcons.iconsArrow,
+                colorFilter: const ColorFilter.mode(
+                    AppColors.kDarkGrey, BlendMode.srcATop),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6.w),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6.w),
+                borderSide: BorderSide(
+                  color: const Color.fromRGBO(243, 154, 74, 0.50),
+                  width: 1.5.w,
                 ),
-          );
-        },
-        itemBuilder: (context, itemData) => Container(
-          height: 34.h,
-          width: 374.w,
-          margin: EdgeInsets.symmetric(horizontal: 12.w),
-          padding: EdgeInsets.symmetric(horizontal: 12.w),
-          alignment: Alignment.centerLeft,
-          child: Text(
-            itemData,
-            style: TextStyles.textStyle14.copyWith(
-              fontWeight: FontWeight.w500,
-              fontFamily: GoogleFonts.inter().fontFamily,
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6.w),
+                borderSide: BorderSide(
+                  color: AppColors.kRed,
+                  width: 1.w,
+                ),
+              ),
             ),
           ),
-        ),
-        onSuggestionSelected: (suggestion) {
-          _controller.text = suggestion;
-        },
-        suggestionsBoxDecoration: SuggestionsBoxDecoration(
-          borderRadius: BorderRadius.circular(8.w),
-          elevation: 2,
-          color: AppColors.kBackgroundColor,
-        ),
-        layoutArchitecture: (items, controller) => SizedBox(
-          height: widget.suggestionListHeight,
-          child: ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (context, index) => items.elementAt(index),
+          suggestionsCallback: suggestionCallback,
+          itemBuilder: (context, itemData) => Container(
+            height: 34.h,
+            width: 374.w,
+            margin: EdgeInsets.symmetric(horizontal: 12.w),
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            alignment: Alignment.centerLeft,
+            child: Text(
+              itemData,
+              style: TextStyles.textStyle14.copyWith(
+                fontWeight: FontWeight.w500,
+                fontFamily: GoogleFonts.inter().fontFamily,
+              ),
+            ),
+          ),
+          onSuggestionSelected: (suggestion) {
+            _controller.text = suggestion;
+          },
+          suggestionsBoxDecoration: SuggestionsBoxDecoration(
+            borderRadius: BorderRadius.circular(8.w),
+            elevation: 2,
+            color: AppColors.kBackgroundColor,
+          ),
+          layoutArchitecture: (items, controller) => SizedBox(
+            height: widget.suggestionListHeight,
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) => items.elementAt(index),
+            ),
           ),
         ),
       ),
+    );
+  }
+
+  FutureOr<Iterable<String>> suggestionCallback(pattern) {
+    return widget.suggestionList.where(
+      (element) => element.toLowerCase().contains(
+            pattern.toLowerCase(),
+          ),
     );
   }
 

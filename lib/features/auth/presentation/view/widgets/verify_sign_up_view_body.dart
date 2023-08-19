@@ -9,19 +9,21 @@ class VerifySignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          AuthenticationAppBar(),
-          PageTitleText(
-            title: 'You’ve got mail',
-            content:
-                'We have sent the OTP verification code\nto your email address. Check your\nemail and enter the code below',
-            titleImage: AppImages.imagesMailImage,
-          ),
-          VerifySignUpSection(),
-        ],
+    return const SafeArea(
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            AuthenticationAppBar(),
+            PageTitleText(
+              title: 'You’ve got mail',
+              content:
+                  'We have sent the OTP verification code\nto your email address. Check your\nemail and enter the code below',
+              titleImage: AppImages.imagesMailImage,
+            ),
+            VerifySignUpSection(),
+          ],
+        ),
       ),
     );
   }

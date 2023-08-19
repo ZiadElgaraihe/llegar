@@ -4,7 +4,7 @@ import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/core/widgets/selectable_category_list_view.dart';
 
 class ItemConditionSection extends StatelessWidget {
-  const ItemConditionSection({super.key});
+  ItemConditionSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +16,17 @@ class ItemConditionSection extends StatelessWidget {
           style: TextStyles.textStyle20,
         ),
         SizedBox(height: 24.h),
-        const SelectableCategoryListView(
-          items: <String>[
-            'All',
-            'New',
-            'Used',
-          ],
+        SelectableCategoryListView(
+          items: _conditions,
         ),
         SizedBox(height: 24.h),
       ],
     );
   }
+
+  final List<String> _conditions = <String>[
+    'All',
+    'New',
+    'Used',
+  ];
 }

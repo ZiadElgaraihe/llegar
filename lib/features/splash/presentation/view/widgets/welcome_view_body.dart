@@ -8,16 +8,18 @@ class WelcomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 40.h),
-          const WelcomeViewAppBar(),
-          SizedBox(height: 104.h),
-          const WelcomePageViewSection(),
-        ],
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 40.h),
+            const WelcomeViewAppBar(),
+            SizedBox(height: 104.h),
+            const WelcomePageViewSection(),
+          ],
+        ),
       ),
     );
   }

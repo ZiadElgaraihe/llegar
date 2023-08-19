@@ -18,14 +18,6 @@ class _VerifySignUpSectionState extends State<VerifySignUpSection> {
   );
 
   @override
-  void dispose() {
-    for (var controller in _resetCodeControllers) {
-      controller.dispose();
-    }
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Column(
       children: [

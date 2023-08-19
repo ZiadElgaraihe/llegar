@@ -9,19 +9,21 @@ class ForgetPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          AuthenticationAppBar(),
-          PageTitleText(
-            title: 'Forget Password',
-            content:
-                'Enter your email address to get an OTP Code\nto reset your Password',
-            titleImage: AppImages.imagesKey,
-          ),
-          ForgetPasswordEmailSection()
-        ],
+    return const SafeArea(
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            AuthenticationAppBar(),
+            PageTitleText(
+              title: 'Forget Password',
+              content:
+                  'Enter your email address to get an OTP Code\nto reset your Password',
+              titleImage: AppImages.imagesKey,
+            ),
+            ForgetPasswordEmailSection()
+          ],
+        ),
       ),
     );
   }

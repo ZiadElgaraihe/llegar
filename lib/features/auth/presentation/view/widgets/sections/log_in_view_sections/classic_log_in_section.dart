@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
@@ -22,9 +23,7 @@ class _ClassicLogInSectionState extends State<ClassicLogInSection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        LogInViewForm(
-          formKey: _formKey
-        ),
+        LogInViewForm(formKey: _formKey),
         SizedBox(height: 26.h),
         const RememberMeRow(),
         SizedBox(height: 24.h),
@@ -32,7 +31,11 @@ class _ClassicLogInSectionState extends State<ClassicLogInSection> {
         SizedBox(height: 4.h),
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, ForgetPasswordView.id);
+            futureDelayedNavigator(
+              () {
+                Navigator.pushNamed(context, ForgetPasswordView.id);
+              },
+            );
           },
           child: Text(
             'Forget the password?',

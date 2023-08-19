@@ -18,7 +18,7 @@ class AddItemViewBody extends StatelessWidget {
               child: const GlobalAppBar(title: 'Add Item'),
             ),
             SizedBox(height: 40.h),
-            Expanded(
+            const Expanded(
               child: AddItemViewListView(),
             ),
           ],

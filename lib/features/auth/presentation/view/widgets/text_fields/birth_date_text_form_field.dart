@@ -19,12 +19,6 @@ class _BirthDateTextFormFieldState extends State<BirthDateTextFormField> {
   final TextEditingController _controller = TextEditingController();
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 294.w,

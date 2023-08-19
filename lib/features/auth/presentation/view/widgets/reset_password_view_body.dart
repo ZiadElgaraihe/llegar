@@ -10,20 +10,22 @@ class ResetPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          const AuthenticationAppBar(),
-          SizedBox(height: 26.h),
-          const PageTitleText(
-            title: 'Create new password',
-            content:
-                'Save the new password in a safe place,\nif you forget it then you have to do a\nforgot password again.',
-            titleImage: AppImages.imagesLockKey,
-          ),
-          const CreateNewPasswordSection(),
-        ],
+    return SafeArea(
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            const AuthenticationAppBar(),
+            SizedBox(height: 26.h),
+            const PageTitleText(
+              title: 'Create new password',
+              content:
+                  'Save the new password in a safe place,\nif you forget it then you have to do a\nforgot password again.',
+              titleImage: AppImages.imagesLockKey,
+            ),
+            const CreateNewPasswordSection(),
+          ],
+        ),
       ),
     );
   }

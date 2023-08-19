@@ -4,38 +4,35 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/auth/presentation/view/widgets/text_fields/auth_type_a_head_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
-class GenderAndCitySection extends StatefulWidget {
-  const GenderAndCitySection({super.key});
+class GenderAndCitySection extends StatelessWidget {
+  GenderAndCitySection({super.key});
 
-  @override
-  State<GenderAndCitySection> createState() => _GenderAndCitySectionState();
-}
-
-class _GenderAndCitySectionState extends State<GenderAndCitySection> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 39.57.h),
-        AuthTypeAHeadTextFormField(
-          hint: 'Gender',
-          suggestionList: _genders,
-          suggestionListHeight: 75.h,
-          onSaved: (newValue) {
-            context.read<SignUpCubit>().gender = newValue;
-          },
-        ),
-        SizedBox(height: 100.h),
-        AuthTypeAHeadTextFormField(
-          hint: 'City',
-          suggestionList: _cities,
-          suggestionListHeight: 175.h,
-          onSaved: (newValue) {
-            context.read<SignUpCubit>().city = newValue;
-          },
-        ),
-        SizedBox(height: 206.h),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.h),
+      child: Column(
+        children: [
+          SizedBox(height: 39.57.h),
+          AuthTypeAHeadTextFormField(
+            hint: 'Gender',
+            suggestionList: _genders,
+            suggestionListHeight: 75.h,
+            onSaved: (newValue) {
+              context.read<SignUpCubit>().gender = newValue;
+            },
+          ),
+          AuthTypeAHeadTextFormField(
+            hint: 'City',
+            suggestionList: _cities,
+            suggestionListHeight: 175.h,
+            onSaved: (newValue) {
+              context.read<SignUpCubit>().city = newValue;
+            },
+          ),
+          SizedBox(height: 100.h),
+        ],
+      ),
     );
   }
 

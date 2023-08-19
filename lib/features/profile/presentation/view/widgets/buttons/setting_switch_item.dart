@@ -46,7 +46,7 @@ class _SettingSwitchItemState extends State<SettingSwitchItem> {
           AdvancedSwitch(
             controller: _isTurnOn,
             height: 22.h,
-            width: 40.w,
+            width: AppConfig.sizeData.width >= 600 ? 35.w : 40.w,
             activeColor: AppColors.kPrimaryColor,
             inactiveColor: const Color(0xFFE4EBF6),
           ),

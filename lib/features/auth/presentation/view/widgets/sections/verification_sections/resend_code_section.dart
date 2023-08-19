@@ -24,9 +24,9 @@ class _ResendCodeSectionState extends State<ResendCodeSection> {
 
   @override
   void dispose() {
-    super.dispose();
     //cancel timer
     timer.cancel();
+    super.dispose();
   }
 
   @override

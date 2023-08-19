@@ -8,7 +8,8 @@ class NewPasswordTextFormField extends StatefulWidget {
     super.key,
     required this.hint,
     required this.validator,
-    this.onSaved, required this.controller,
+    this.onSaved,
+    required this.controller,
   });
 
   final String hint;
@@ -36,19 +37,7 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
         builder: (context, isVisible, child) => TextFormField(
           focusNode: _focusNode,
           controller: widget.controller,
-          onTap: () {
-            _focusNode.addListener(
-              () {
-                if (!_focusNode.hasFocus && widget.controller.text.isNotEmpty) {
-                  _iconColor.value = AppColors.kSecondaryColor;
-                } else if (!_focusNode.hasFocus && widget.controller.text.isEmpty) {
-                  _iconColor.value = AppColors.kDarkGrey;
-                } else {
-                  _iconColor.value = AppColors.kGreen;
-                }
-              },
-            );
-          },
+          onTap: changeIconColor,
           validator: widget.validator,
           onSaved: widget.onSaved,
           style: TextStyles.textStyle15,
@@ -99,6 +88,24 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
           ),
         ),
       ),
+    );
+  }
+
+  //change icon color depend on the state of the field
+  //1- if unfocus and empty (kDarkGrey)
+  //2- if unfocus and not empty (kSecondaryColor)
+  //3- if focus (kGreen)
+  void changeIconColor() {
+    _focusNode.addListener(
+      () {
+        if (!_focusNode.hasFocus && widget.controller.text.isEmpty) {
+          _iconColor.value = AppColors.kDarkGrey;
+        } else if (!_focusNode.hasFocus && widget.controller.text.isNotEmpty) {
+          _iconColor.value = AppColors.kSecondaryColor;
+        } else {
+          _iconColor.value = AppColors.kGreen;
+        }
+      },
     );
   }
 }

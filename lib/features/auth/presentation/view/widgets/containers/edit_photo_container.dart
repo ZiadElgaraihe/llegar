@@ -5,9 +5,7 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 
 class EditPhotoContainer extends StatelessWidget {
-  const EditPhotoContainer({
-    super.key,
-  });
+  const EditPhotoContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

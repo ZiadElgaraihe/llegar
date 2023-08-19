@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
@@ -15,7 +16,11 @@ class WelcomeViewAppBar extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, SocialLogInView.id);
+          futureDelayedNavigator(
+            () {
+              Navigator.pushReplacementNamed(context, SocialLogInView.id);
+            },
+          );
         },
         style: ButtonStyle(
           fixedSize: MaterialStatePropertyAll(Size(77.w, 34.h)),
