@@ -3,6 +3,7 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/features/profile/presentation/view/edit_profile_view.dart';
 import 'package:llegar/features/profile/presentation/view/my_activities_view.dart';
+import 'package:llegar/features/profile/presentation/view/privacy_policy_view.dart';
 import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_item_button.dart';
 import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_log_out.dart';
 import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_switch_item.dart';
@@ -42,7 +43,9 @@ class ProfileSettingsSection extends StatelessWidget {
           SettingItemButton(
             icon: AppIcons.iconsPrivacyPolicy,
             title: 'Privacy Policy',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, PrivacyPolicyView.id);
+            },
           ),
           SettingItemButton(
             icon: AppIcons.iconsContactUs,

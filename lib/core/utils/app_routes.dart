@@ -17,6 +17,7 @@ import 'package:llegar/features/profile/presentation/view/add_item_view.dart';
 import 'package:llegar/features/profile/presentation/view/edit_profile_view.dart';
 import 'package:llegar/features/profile/presentation/view/my_activities_view.dart';
 import 'package:llegar/features/profile/presentation/view/premium_subscribe_view.dart';
+import 'package:llegar/features/profile/presentation/view/privacy_policy_view.dart';
 import 'package:llegar/features/splash/presentation/view/splash_view.dart';
 import 'package:llegar/features/splash/presentation/view/welcome_view.dart';
 
@@ -43,5 +44,6 @@ abstract class AppRoutes {
     AddItemView.id: (context) => const AddItemView(),
     PremiumSubscribeView.id: (context) => const PremiumSubscribeView(),
     EditProfileView.id: (context) => const EditProfileView(),
+    PrivacyPolicyView.id: (context) => const PrivacyPolicyView(),
   };
 }
