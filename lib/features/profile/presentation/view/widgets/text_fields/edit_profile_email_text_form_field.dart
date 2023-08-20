@@ -7,16 +7,18 @@ import 'package:llegar/core/utils/app_icons.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 import 'package:llegar/features/auth/validators/validators.dart';
 
-class EmailTextFormField extends StatefulWidget {
-  const EmailTextFormField({super.key, required this.onSaved});
+class EditProfileEmailTextFormField extends StatefulWidget {
+  const EditProfileEmailTextFormField({super.key, required this.onSaved});
 
   final void Function(String? newValue) onSaved;
 
   @override
-  State<EmailTextFormField> createState() => _EmailTextFormFieldState();
+  State<EditProfileEmailTextFormField> createState() =>
+      _EditProfileEmailTextFormFieldState();
 }
 
-class _EmailTextFormFieldState extends State<EmailTextFormField> {
+class _EditProfileEmailTextFormFieldState
+    extends State<EditProfileEmailTextFormField> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
   final ValueNotifier<Color> _iconColor =
@@ -43,13 +45,13 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.kLightBlueGrey,
-          contentPadding: EdgeInsets.symmetric(vertical: 22.h),
+          contentPadding:
+              EdgeInsets.symmetric(vertical: 22.h, horizontal: 33.w),
           hintText: 'Email',
-          suffixIcon: Padding(padding: EdgeInsets.only(right: 33.w)),
-          prefixIcon: Container(
+          suffixIcon: Container(
             height: 16.h,
             width: 16.w,
-            margin: EdgeInsets.only(right: 8.w, left: 33.w),
+            margin: EdgeInsets.only(right: 33.w, left: 8.w),
             child: ValueListenableBuilder(
               valueListenable: _iconColor,
               builder: (context, value, child) => SvgPicture.asset(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/features/auth/validators/validators.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/text_fields/data_text_form_field.dart';
+import 'package:llegar/core/widgets/data_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
 
 class NameDataSection extends StatelessWidget {

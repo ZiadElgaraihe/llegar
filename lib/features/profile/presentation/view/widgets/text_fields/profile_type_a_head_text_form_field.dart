@@ -12,12 +12,10 @@ class ProfileTypeAHeadTextFormField extends StatefulWidget {
     super.key,
     required this.hint,
     required this.suggestionList,
-    required this.suggestionListHeight,
     required this.onSaved,
   });
 
   final String hint;
-  final double suggestionListHeight;
   final List<String> suggestionList;
   final void Function(String? newValue) onSaved;
 
@@ -35,10 +33,11 @@ class _ProfileTypeAHeadTextFormFieldState
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: _isFocused,
-      builder: (context, value, child) => AnimatedPadding(
+      builder: (context, value, child) => AnimatedContainer(
         duration: const Duration(milliseconds: 500),
-        padding: EdgeInsets.only(
-          bottom: value ? (widget.suggestionListHeight + 40).h : 40.h,
+        width: 398.w,
+        margin: EdgeInsets.only(
+          bottom: value ? 175.h : 40.h,
         ),
         child: TypeAheadFormField(
           onSuggestionsBoxToggle: (value) {
@@ -96,7 +95,7 @@ class _ProfileTypeAHeadTextFormFieldState
             color: AppColors.kBackgroundColor,
           ),
           layoutArchitecture: (items, controller) => SizedBox(
-            height: widget.suggestionListHeight,
+            height: 135.h,
             child: ListView.builder(
               itemCount: items.length,
               itemBuilder: (context, index) => items.elementAt(index),

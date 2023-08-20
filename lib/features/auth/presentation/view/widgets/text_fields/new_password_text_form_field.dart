@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/functions/change_icon_color.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
@@ -37,7 +38,13 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
         builder: (context, isVisible, child) => TextFormField(
           focusNode: _focusNode,
           controller: widget.controller,
-          onTap: changeIconColor,
+          onTap: () {
+          changeIconColor(
+            focusNode: _focusNode,
+            controller: widget.controller,
+            iconColor: _iconColor,
+          );
+        },
           validator: widget.validator,
           onSaved: widget.onSaved,
           style: TextStyles.textStyle15,
@@ -88,24 +95,6 @@ class _NewPasswordTextFormFieldState extends State<NewPasswordTextFormField> {
           ),
         ),
       ),
-    );
-  }
-
-  //change icon color depend on the state of the field
-  //1- if unfocus and empty (kDarkGrey)
-  //2- if unfocus and not empty (kSecondaryColor)
-  //3- if focus (kGreen)
-  void changeIconColor() {
-    _focusNode.addListener(
-      () {
-        if (!_focusNode.hasFocus && widget.controller.text.isEmpty) {
-          _iconColor.value = AppColors.kDarkGrey;
-        } else if (!_focusNode.hasFocus && widget.controller.text.isNotEmpty) {
-          _iconColor.value = AppColors.kSecondaryColor;
-        } else {
-          _iconColor.value = AppColors.kGreen;
-        }
-      },
     );
   }
 }

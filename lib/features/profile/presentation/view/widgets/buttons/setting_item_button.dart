@@ -16,6 +16,8 @@ class SettingItemButton extends StatelessWidget {
 
   final String icon;
   final String title;
+
+  ///onTap method will delay for 350 milliseconds
   final void Function() onTap;
 
   @override

@@ -4,13 +4,20 @@ import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_images.dart';
 
 class ProfileImageContainer extends StatelessWidget {
-  const ProfileImageContainer({super.key});
+  const ProfileImageContainer({
+    super.key,
+    required this.height,
+    required this.width,
+  });
+
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.h,
-      width: 100.w,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(

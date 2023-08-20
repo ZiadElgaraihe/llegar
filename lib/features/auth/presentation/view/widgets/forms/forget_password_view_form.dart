@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:llegar/features/auth/validators/validators.dart';
-import 'package:llegar/features/auth/presentation/view/widgets/text_fields/data_text_form_field.dart';
+import 'package:llegar/core/widgets/data_text_form_field.dart';
 import 'package:llegar/features/auth/presentation/view_model/forget_password_cubit/forget_password_cubit.dart';
 
 class ForgetPasswordViewForm extends StatelessWidget {

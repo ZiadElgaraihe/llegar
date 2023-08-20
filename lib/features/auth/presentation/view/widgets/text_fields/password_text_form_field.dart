@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:llegar/core/functions/change_icon_color.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
@@ -103,25 +104,5 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
         ),
       ),
     );
-  }
-
-  //change icon color depend on the state of the field
-  //1- if unfocus and empty (kDarkGrey)
-  //2- if unfocus and not empty (kSecondaryColor)
-  //3- if focus (kGreen)
-  void changeIconColor({
-    required FocusNode focusNode,
-    required TextEditingController controller,
-    required ValueNotifier<Color> iconColor,
-  }) {
-    focusNode.addListener(() {
-      if (!focusNode.hasFocus && controller.text.isNotEmpty) {
-        iconColor.value = AppColors.kSecondaryColor;
-      } else if (!focusNode.hasFocus && controller.text.isEmpty) {
-        iconColor.value = AppColors.kDarkGrey;
-      } else {
-        iconColor.value = AppColors.kGreen;
-      }
-    });
   }
 }

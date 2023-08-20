@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
+import 'package:llegar/features/profile/presentation/view/edit_profile_view.dart';
 import 'package:llegar/features/profile/presentation/view/my_activities_view.dart';
 import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_item_button.dart';
 import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_log_out.dart';
@@ -18,7 +19,9 @@ class ProfileSettingsSection extends StatelessWidget {
           SettingItemButton(
             icon: AppIcons.iconsEditProfile,
             title: 'Edit Profile',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, EditProfileView.id);
+            },
           ),
           SettingItemButton(
             icon: AppIcons.iconsMyActivities,
