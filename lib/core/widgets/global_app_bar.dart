@@ -11,9 +11,11 @@ class GlobalAppBar extends StatelessWidget {
   const GlobalAppBar({
     super.key,
     required this.title,
+    this.initSuffixIcon = false,
   });
 
   final String title;
+  final bool initSuffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +53,14 @@ class GlobalAppBar extends StatelessWidget {
               color: AppColors.kSecondaryColor,
             ),
           ),
+          if (initSuffixIcon) const Spacer(),
+          if (initSuffixIcon)
+            SvgPicture.asset(
+              AppIcons.iconsChatRounded,
+              height: 32.h,
+              width: 32.w,
+              fit: BoxFit.fill,
+            ),
         ],
       ),
     );

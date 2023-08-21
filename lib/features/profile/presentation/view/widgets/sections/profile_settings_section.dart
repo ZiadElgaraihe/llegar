@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/app_icons.dart';
+import 'package:llegar/features/profile/presentation/view/contact_us_view.dart';
 import 'package:llegar/features/profile/presentation/view/edit_profile_view.dart';
+import 'package:llegar/features/profile/presentation/view/help_center_view.dart';
 import 'package:llegar/features/profile/presentation/view/my_activities_view.dart';
 import 'package:llegar/features/profile/presentation/view/privacy_policy_view.dart';
 import 'package:llegar/features/profile/presentation/view/widgets/buttons/setting_item_button.dart';
@@ -38,7 +40,9 @@ class ProfileSettingsSection extends StatelessWidget {
           SettingItemButton(
             icon: AppIcons.iconsHelpCenter,
             title: 'Help Center',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, HelpCenterView.id);
+            },
           ),
           SettingItemButton(
             icon: AppIcons.iconsPrivacyPolicy,
@@ -50,7 +54,9 @@ class ProfileSettingsSection extends StatelessWidget {
           SettingItemButton(
             icon: AppIcons.iconsContactUs,
             title: 'Contact Us',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ContactUsView.id);
+            },
           ),
           const SettingSwitchItem(
             icon: AppIcons.iconsDarkMode,

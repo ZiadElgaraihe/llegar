@@ -23,21 +23,28 @@ abstract class AppImages {
 
   static const String imagesElectronic = "assets/images/electronic.svg";
 
+  static const String imagesEllipse9 = "assets/images/ellipse9.svg";
+
   static const String imagesEllipse10 = "assets/images/ellipse10.svg";
 
   static const String imagesEllipse11 = "assets/images/ellipse11.svg";
 
   static const String imagesEllipse12 = "assets/images/ellipse12.svg";
 
-  static const String imagesEllipse9 = "assets/images/ellipse9.svg";
+  static const String imagesFacebookContactUs =
+      "assets/images/facebook_contact_us.svg";
 
   static const String imagesFacebookLogo = "assets/images/facebook_logo.svg";
 
   static const String imagesGoogleLogo = "assets/images/google_logo.svg";
 
+  static const String imagesHeadphone = "assets/images/headphones.svg";
+
   static const String imagesHouse = "assets/images/house.svg";
 
   static const String imagesIdBackgroundPng = "assets/images/id_background.png";
+
+  static const String imagesInstagram = "assets/images/instagram.svg";
 
   static const String imagesJeepCarPng = "assets/images/jeep_car.png";
 
@@ -66,7 +73,13 @@ abstract class AppImages {
 
   static const String imagesSplashLogo = "assets/images/splash_logo.svg";
 
+  static const String imagesTwitter = "assets/images/twitter.svg";
+
   static const String imagesTwoFactorAuth = "assets/images/two_factor_auth.svg";
 
+  static const String imagesWebsite = "assets/images/website.svg";
+
   static const String imagesWelcomeHome = "assets/images/welcome_home.svg";
+
+  static const String imagesWhatsapp = "assets/images/whatsapp.svg";
 }

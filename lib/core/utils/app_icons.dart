@@ -17,6 +17,8 @@ abstract class AppIcons {
 
   static const String iconsChatInactive = "assets/icons/chat_inactive.svg";
 
+  static const String iconsChatRounded = "assets/icons/chat_rounded.svg";
+
   static const String iconsChevronRight = "assets/icons/chevron_right.svg";
 
   static const String iconsCircleCheckSolid =

@@ -14,7 +14,9 @@ import 'package:llegar/features/home/presentation/view/top_deals_view.dart';
 import 'package:llegar/features/home/presentation/view/wishlist_view.dart';
 import 'package:llegar/features/navbar/presentation/view/navigation_view.dart';
 import 'package:llegar/features/profile/presentation/view/add_item_view.dart';
+import 'package:llegar/features/profile/presentation/view/contact_us_view.dart';
 import 'package:llegar/features/profile/presentation/view/edit_profile_view.dart';
+import 'package:llegar/features/profile/presentation/view/help_center_view.dart';
 import 'package:llegar/features/profile/presentation/view/my_activities_view.dart';
 import 'package:llegar/features/profile/presentation/view/premium_subscribe_view.dart';
 import 'package:llegar/features/profile/presentation/view/privacy_policy_view.dart';
@@ -45,5 +47,7 @@ abstract class AppRoutes {
     PremiumSubscribeView.id: (context) => const PremiumSubscribeView(),
     EditProfileView.id: (context) => const EditProfileView(),
     PrivacyPolicyView.id: (context) => const PrivacyPolicyView(),
+    HelpCenterView.id: (context) => const HelpCenterView(),
+    ContactUsView.id: (context) => const ContactUsView(),
   };
 }
