@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:llegar/core/functions/future_delayed_navigator.dart';
 import 'package:llegar/core/utils/app_config.dart';
 import 'package:llegar/core/utils/text_styles.dart';
 
-class FilterButton extends StatelessWidget {
-  const FilterButton({
+class ColoredButton extends StatelessWidget {
+  const ColoredButton({
     super.key,
     required this.title,
     required this.textColor,
@@ -19,7 +20,13 @@ class FilterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: () {
+        futureDelayedNavigator(
+          () {
+            onPressed();
+          },
+        );
+      },
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(backgroundColor),
         shape: MaterialStatePropertyAll(

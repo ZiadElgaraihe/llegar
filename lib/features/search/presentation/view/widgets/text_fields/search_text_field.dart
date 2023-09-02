@@ -23,7 +23,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
   @override
   void initState() {
     super.initState();
-    handleFocusChangeAndNavigation();
+    _handleFocusChangeAndNavigation();
   }
 
   @override
@@ -52,7 +52,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
                     onPressed: () {
                       futureDelayedNavigator(
                         () {
-                          showSearchFilter(context);
+                          _showSearchFilter(context);
                         },
                       );
                     },
@@ -104,7 +104,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
     );
   }
 
-  void showSearchFilter(BuildContext context) {
+  void _showSearchFilter(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -119,7 +119,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
   //1- focus (1E1E1E)
   //2- unfocus and not empty (7A828A)
   //3- unfocus and empty (pop)
-  void handleFocusChangeAndNavigation() {
+  void _handleFocusChangeAndNavigation() {
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {
         _iconColor.value = AppColors.kPrimaryColor;

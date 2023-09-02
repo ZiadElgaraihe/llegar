@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
-import 'package:llegar/features/search/presentation/view/widgets/buttons/filter_button.dart';
+import 'package:llegar/core/widgets/colored_button.dart';
 
 class ButtonsSection extends StatelessWidget {
   const ButtonsSection({super.key});
@@ -10,13 +10,13 @@ class ButtonsSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        FilterButton(
+        ColoredButton(
           title: 'Reset',
           textColor: AppColors.kPrimaryColor,
           backgroundColor: const Color(0xFFE1E8FF),
           onPressed: () {},
         ),
-        FilterButton(
+        ColoredButton(
           title: 'Apply',
           textColor: AppColors.kBackgroundColor,
           backgroundColor: AppColors.kPrimaryColor,
