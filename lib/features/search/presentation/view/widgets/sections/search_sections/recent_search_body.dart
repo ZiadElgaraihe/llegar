@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:llegar/core/utils/app_colors.dart';
 import 'package:llegar/core/utils/app_config.dart';
-import 'package:llegar/features/search/presentation/view/widgets/list_views/recent_lis_view.dart';
+import 'package:llegar/features/search/presentation/view/widgets/list_views/recent_list_view.dart';
 import 'package:llegar/features/search/presentation/view/widgets/rows/recent_search_body_title.dart';
 
 class RecentSearchBody extends StatelessWidget {

@@ -31,7 +31,7 @@ class _SelectableCategoryListViewState
         itemBuilder: (context, index) => SelectableCategoryTile(
           title: widget.items[index],
           selectedCategory: _selectedType,
-          icon: widget.icon,
+          icon: widget.items[index] == 'All' ? null : widget.icon,
         ),
         separatorBuilder: (context, index) => SizedBox(width: 8.w),
       ),
